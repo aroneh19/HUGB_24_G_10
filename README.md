@@ -4,6 +4,8 @@ Social networking app that connects users based on shared interests, fostering m
 Users can create profiles, highlight their hobbies and match with others who have similar passions, from spors and outdoor activities to book clubs and gaming
 Our goal is to enable natural, interest-based connections and encourage real-world meetups.
 
+Overview Report on Google Docs [here](https://docs.google.com/document/d/152uOSO3HXaR_VH70s5MGvPoHjmaE9rNMEzw18Dn9ckw/edit?usp=sharing).
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
