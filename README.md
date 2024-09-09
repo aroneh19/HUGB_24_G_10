@@ -1,5 +1,19 @@
-# Hugb2024Template
+# Meet4Real - Social Networking App for Making Friends
 
-This is a template project that contains the structure for the project work in T-303-HUGB Software Engineering, Fall 2024.
+Social networking app that connects users based on shared interests, fostering meaningful frienships and communities.
+Users can create profiles, highlight their hobbies and match with others who have similar passions, from spors and outdoor activities to book clubs and gaming
+Our goal is to enable natural, interest-based connections and encourage real-world meetups.
 
-Please make sure to read the [Code of Conduct](https://gitlab.com/grischal/hugb2024template/-/blob/main/code-of-conduct.md).
+## Features
+
+- Create a Profile and log in
+- Swiping to match with others
+- Messages for matches
+- Filtering by: Interests, Location, Age and Gender
+- Edit Profile
+- Unmatch option
+- See friendship status of matches
+
+'''bash
+git clone https://gitlab.com/aroneh19/hugb-24-g-10.git
+'''

@@ -9,7 +9,7 @@
 - Vigfús did the persons
 - Tómas did the domain model
 - Kristín and Edda did the scenarios, use cases, introduction, summary and made the decision protocol file together. 
-
+- Aron did the README.md file
 
 
 #Sprint 2
