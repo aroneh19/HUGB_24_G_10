@@ -14,6 +14,7 @@ Our goal is to enable natural, interest-based connections and encourage real-wor
 - Unmatch option
 - See friendship status of matches
 
-'''bash
+## Getting Started
+
+```bash
 git clone https://gitlab.com/aroneh19/hugb-24-g-10.git
-'''
