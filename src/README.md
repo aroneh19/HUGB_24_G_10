@@ -1,1 +1,0 @@
-This folder will contain all your source files.
