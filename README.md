@@ -17,4 +17,4 @@ Our goal is to enable natural, interest-based connections and encourage real-wor
 ## Getting Started
 
 ```bash
-git clone https://gitlab.com/aroneh19/hugb-24-g-10.git```
+git clone https://gitlab.com/aroneh19/hugb-24-g-10.git
