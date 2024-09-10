@@ -1,0 +1,37 @@
+# Python specific #
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment #
+venv/
+ENV/
+env/
+*.env
+
+# Flask specific #
+instance/
+*.db
+
+# IDE/editor specific #
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and databases #
+*.log
+*.sqlite3
+
+# Byte-compiled / optimized / DLL files #
+*.egg-info/
+.eggs/
+
+# Test results #
+coverage/
+.cache/
+
+# MacOS #
+.DS_Store
