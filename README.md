@@ -29,7 +29,7 @@ Unit tests are executed using:
 ```bash
 python3 -m unittest test.interface_test
 ```
-(to run all tests in the module ``interface_test``) or 
+(to run all tests in the module ``interface_test``) or :
 ```bash
 python3 -m unittest discover -s test -p '*_test.py'
 ```
@@ -37,13 +37,29 @@ python3 -m unittest discover -s test -p '*_test.py'
 
 To additionally run coverage analysis, unittest can be executed as a part of the ``coverage`` tool: 
 
+Erases the coverage file:
 ```bash
-coverage erase #erases the coverage file
-coverage run -m unittest test.interface_test #runs all tests in module "test/interface_test.py" and records coverage
-coverage run --append -m unittest test.interface_test #same as above, but does not override previous coverage information
-coverage run --source app -m unittest test.interface_test #Only collects coverage information about the code in app folder
-coverage report #shows textual coverage summary
-coverage html #generates an HTML coverage report
+coverage erase
+```
+Runs all tests in module "test/interface_test.py" and records coverage:
+```bash
+coverage run -m unittest test.interface_test
+```
+Same as above, but does not override previous coverage information:
+```bash
+coverage run --append -m unittest test.interface_test
+```
+Only collects coverage information about the code in app folder:
+```bash
+coverage run --source app -m unittest test.interface_test
+```
+Shows textual coverage summary:
+```bash
+coverage report
+```
+Generates an HTML coverage report:
+```bash
+coverage html
 ```
 
 ## Features
