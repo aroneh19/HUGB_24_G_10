@@ -8,7 +8,7 @@ Overview Report on Google Docs [here](https://docs.google.com/document/d/152uOSO
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
+- [Running Instructions](#running-instructions)
 - [Features](#features)
 - [License](#license)
 
