@@ -1,8 +1,8 @@
 import math
 
 class SystemInterface:
-   """A class representing our interface to the outside."""
-    
+  """A class representing our interface to the outside."""
+  
   def an_operation_without_params (self):
     """
     Return dummy data.

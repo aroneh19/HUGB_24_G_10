@@ -1,0 +1,11 @@
+[
+    {
+        "username": "aron",
+        "password": "aron123",
+        "fullname": "Aron Elí",
+        "interests": ["basketball", "outdoor activities"],
+        "location": "Reykjavík",
+        "age": 19,
+        "bio": "I'm a basketball player and I love outdoor activities."
+    }
+]
