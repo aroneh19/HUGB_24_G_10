@@ -35,3 +35,6 @@ coverage/
 
 # MacOS #
 .DS_Store
+
+# Requirmenets File #
+requirements.txt
