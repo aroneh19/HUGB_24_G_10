@@ -1,0 +1,16 @@
+{
+    "messages": [
+        {
+            "sender": "aron",
+            "receiver": "tomas",
+            "message": "Hello, how are you?",
+            "time": "2024-09-22T14:30:00"
+        },
+        {
+            "sender": "tomas",
+            "receiver": "aron",
+            "message": "I'm good, thanks!",
+            "time": "2024-09-22T14:31:00"
+        }
+    ]
+}
