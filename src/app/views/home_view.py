@@ -23,9 +23,6 @@ class MainMenuView:
                 print("Messages")
             elif choice == "4":
                 print("Profile")
-            elif choice == "5":
-                print("Exiting...")
-                break
             else:
                 print("Invalid choice, try again.")
 
