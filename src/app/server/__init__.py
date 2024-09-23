@@ -1,1 +1,1 @@
-from server.interface import SystemInterface
+from .interface import SystemInterface

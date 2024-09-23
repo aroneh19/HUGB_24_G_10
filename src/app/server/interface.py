@@ -1,6 +1,6 @@
-from logic.profile_logic import ProfileLogic
-from logic.filter_logic import FilterLogic  # Assuming you have these classes
-from logic.message_logic import MessageLogic  # Assuming these exist
+from app.logic.profile_logic import ProfileLogic
+from app.logic.filter_logic import FilterLogic
+from app.logic.message_logic import MessageLogic
 
 class SystemInterface:
     """A class representing our interface to the outside."""
