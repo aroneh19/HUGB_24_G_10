@@ -1,4 +1,5 @@
-from ..server import SystemInterface
+import sys
+from app.server.interface import SystemInterface
 
 class MainMenuView:
     def __init__(self) -> None:
@@ -9,7 +10,6 @@ class MainMenuView:
         print("2. Filter")
         print("3. Messages")
         print("4. Profile")
-        print("5. Quit")
 
     def main_menu(self):
         while True:
@@ -28,3 +28,7 @@ class MainMenuView:
                 break
             else:
                 print("Invalid choice, try again.")
+
+if __name__ == "__main__":
+    main_menu = MainMenuView()
+    main_menu.main_menu()
