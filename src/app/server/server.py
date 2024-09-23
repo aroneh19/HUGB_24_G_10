@@ -1,4 +1,4 @@
-from src.app.server.interface import *
+from src.app.server import SystemInterface
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
