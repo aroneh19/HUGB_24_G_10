@@ -1,17 +1,12 @@
-import math
+from logic import *
 
 class SystemInterface:
   """A class representing our interface to the outside."""
   
-  def an_operation_without_params (self):
-    """
-    Return dummy data.
+  def __init__(self):
+    self.user_logic = UserLogic()
+    self.filter_logic = FilterLogic()
+    self.message_logic = MessageLogic()
 
-    Returns
-    -------
-    dictionary
-      Dummy data with a message.
-    """
-
-    #Here you call the actual operation in your application code.
-    return {'msg':'Operation an_operation_without_params not yet implemented'}
+  def get_user(self):
+    return self.user_logic.get_user()

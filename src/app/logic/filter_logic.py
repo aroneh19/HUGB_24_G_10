@@ -1,0 +1,2 @@
+class FilterLogic:
+    pass
