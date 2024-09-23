@@ -17,3 +17,6 @@ def add_user():
     # Vantar að bæta við parameturum
     new_user = iface.add_user()
     return jsonify(new_user), 201
+
+if __name__ == '__main__':
+    app.run(debug=True)
