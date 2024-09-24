@@ -1,17 +1,7 @@
-from logic.user_logic import UserLogic
+from logic import user_logic
 class CreateProfileView:
     def __init__(self):
         self.user_logic = UserLogic()
-
-        self.profile = {
-            "username": None,
-            "password": None,
-            "name": None,
-            "age": None,
-            "bio": None,
-            "interests": [],
-            "location": None
-        }
 
     def create_profile_menu(self):
         while True:

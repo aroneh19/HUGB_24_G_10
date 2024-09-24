@@ -1,4 +1,4 @@
-from logic.user_logic import UserLogic
+from src.app.logic.user_logic import UserLogic
 class CreateProfileView:
     def __init__(self):
         self.user_logic = UserLogic()
