@@ -1,2 +1,5 @@
+from app.models.user_model import User
+
 class FilterLogic:
-    pass
+    def __init__(self) -> None:
+        pass
