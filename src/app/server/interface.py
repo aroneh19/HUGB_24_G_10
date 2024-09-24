@@ -1,4 +1,4 @@
-from app.logic.profile_logic import ProfileLogic
+from app.logic.user_logic import UserLogic
 from app.logic.filter_logic import FilterLogic
 from app.logic.message_logic import MessageLogic
 
@@ -6,7 +6,7 @@ class SystemInterface:
     """A class representing our interface to the outside."""
   
     def __init__(self):
-        self.user_logic = ProfileLogic()
+        self.user_logic = UserLogic()
         self.filter_logic = FilterLogic()
         self.message_logic = MessageLogic()
 
