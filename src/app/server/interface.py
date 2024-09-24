@@ -15,3 +15,6 @@ class SystemInterface:
 
     def add_user(self, user_data):
         return self.user_logic.create_user(user_data)
+    
+    def an_operation_without_params(self):
+        return {"msg": "Operation successful"}
