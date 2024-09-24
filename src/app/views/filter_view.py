@@ -24,7 +24,7 @@ class FilterView:
             elif choice == "c":
                 self.filter = {
                     "interests": [],
-                    "age": None,
+                    "age": [],
                     "location": None}
             elif choice == "b":
                 break
