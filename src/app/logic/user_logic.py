@@ -1,6 +1,5 @@
-from server import SystemInterface
 class UserLogic:
-    def init(self):
+    def __init__(self):
         self.user_storage = {}
 
     def check_username(self, username):
@@ -49,7 +48,7 @@ class UserLogic:
             return False
 
 
-user = UserLogic()
-print(user.check_username("aron")) # True
-print(user.check_age(1.2)) # True
-print(user.check_interests(["football"])) # True
+# user = UserLogic()
+# print(user.check_username("aron")) # True
+# print(user.check_age(1.2)) # True
+# print(user.check_interests(["football"])) # True
