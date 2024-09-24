@@ -1,13 +1,13 @@
 import json
 
 class User:
-    def __init__(self, username: str, password: str, name: str, 
+    def __init__(self, username: str, password: str, fullname: str, 
                  bio: str = "", interests: list[str] = [], location: str = ""):
         
         self.username = username
         self.password = password
         
-        self.name = name
+        self.fullname = fullname
         self.bio = bio
         self.interests = interests
         self.location = location
