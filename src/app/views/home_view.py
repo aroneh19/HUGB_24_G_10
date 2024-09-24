@@ -1,7 +1,6 @@
 import sys
 from app.server.interface import SystemInterface
 from app.views.filter_view import FilterView
-from app.views.profile_view import ProfileView
 from app.views.swiping_view import SwipingView
 
 class MainMenuView:
@@ -23,7 +22,7 @@ class MainMenuView:
             if choice == "1":
                 self.swiping.start_swiping()
             elif choice == "2":
-                self.filter.set_filter()
+                self.filter.filter_menu()
             elif choice == "3":
                 print("Messages")
             elif choice == "4":
