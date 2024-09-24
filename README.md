@@ -27,11 +27,11 @@ flask --app app.server.server run
 ```
 Unit tests are executed using: 
 ```bash
-python3 -m unittest test.interface_test
+python -m unittest test.base_test
 ```
-(to run all tests in the module ``interface_test``) or :
+(to run all tests in the module ``base_test``) or :
 ```bash
-python3 -m unittest discover -s test -p '*_test.py'
+python -m unittest discover -s test -p '*_test.py'
 ```
 (to run all tests in all modules ending on ``_test.py`` in the test folder).
 
@@ -41,17 +41,17 @@ Erases the coverage file:
 ```bash
 coverage erase
 ```
-Runs all tests in module "test/interface_test.py" and records coverage:
+Runs all tests in module "test/base_test.py" and records coverage:
 ```bash
-coverage run -m unittest test.interface_test
+coverage run -m unittest test.base_test
 ```
 Same as above, but does not override previous coverage information:
 ```bash
-coverage run --append -m unittest test.interface_test
+coverage run --append -m unittest test.base_test
 ```
 Only collects coverage information about the code in app folder:
 ```bash
-coverage run --source app -m unittest test.interface_test
+coverage run --source app -m unittest test.base_test
 ```
 Shows textual coverage summary:
 ```bash
