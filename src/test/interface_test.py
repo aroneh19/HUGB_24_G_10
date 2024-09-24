@@ -11,12 +11,8 @@ class TestInterface(unittest.TestCase):
            
         self.my_iface = SystemInterface()
 
-    def test_an_operation_without_params (self):
-        """This is an actual unit test: It only tests the unit (function), without any of the Flask stuff before it.
-           The assertions check that the return value is not of type None, has a key "msg", and contains the defined
-           String as a message. Change any of the assertions to check if you can fail the test!"""
-
+    def test_an_operation_without_params(self):
         ret = self.my_iface.an_operation_without_params()
         self.assertTrue(not ret is None)
         self.assertTrue('msg' in ret.keys())
-        self.assertEqual(ret['msg'], 'Operation an_operation_without_params not yet implemented')
+        self.assertEqual(ret['msg'], 'Operation successful')
