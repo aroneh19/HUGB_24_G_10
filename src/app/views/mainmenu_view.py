@@ -18,7 +18,7 @@ class MainMenuView:
             self.show_menu()
             choice = input("Enter choice: ")
             if choice == "1":
-                self.swiping.start_swiping()
+                self.swiping.start_swiping(self.filter.filter)
             elif choice == "2":
                 self.filter.filter_menu()
             elif choice == "3":

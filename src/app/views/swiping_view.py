@@ -1,43 +1,38 @@
-from app.models.user_model import User
+from app.logic.filter_logic import FilterLogic
 
 class SwipingView:
-    def __init__(self):
-        # Hardcoded users for testing
-        self.profiles = [
-            User("johndoe", "password123", "John Doe", 
-                 "I am a test user.", ["Hiking", "Reading"], "New York"),
-            User("janedoe", "password456", "Jane Doe", 
-                 "Love cooking and movies.", ["Cooking", "Movies"], "Los Angeles"),
-            User("bobsmith", "password789", "Bob Smith", 
-                 "I enjoy playing video games.", ["Gaming", "Tech"], "Chicago")
-        ]
-        self.index = 0  
-    
-    def start_swiping(self):
-        """Initiates the swiping process."""
-        while self.index < len(self.profiles):
-            current_profile = self.profiles[self.index]
-            self.display_profile(current_profile)
-            
-            action = input("Swipe right (1) to like, left (2) to skip, or 'b' to quit: ").lower()
-            if action == "1":
-                print(f"You liked {current_profile.name}")
-            elif action == "2":
-                print(f"You skipped {current_profile.name}")
-            elif action == "b":
+    def __init__(self) -> None:
+        self.filter_logic = FilterLogic()
+        self.filtered_users = []
+
+    def start_swiping(self, filters):
+        self.filtered_users = self.filter_logic.apply_filters(filters)
+        
+        if not self.filtered_users:
+            print("No users found based on your filters.")
+            return
+        
+        current_user_index = 0
+        while current_user_index < len(self.filtered_users):
+            user = self.filtered_users[current_user_index]
+            self.display_user(user)
+            choice = input("Swipe right (r) to like or left (l) to pass (b to go back): ")
+
+            if choice == "r":
+                print(f"You liked {user['fullname']}!")
+                current_user_index += 1
+            elif choice == "l":
+                print(f"You passed on {user['fullname']}.")
+                current_user_index += 1
+            elif choice == "b":
                 break
             else:
-                print("Invalid input.")
-            
-            self.index += 1
-        
-        print("No more profiles to swipe!")
-        
-
-    def display_profile(self, profile):
-        """Display the current profile in a readable format."""
-        print("\n--- Profile ---")
-        print(f"Name: {profile.name}")
-        print(f"Location: {profile.location}")
-        print(f"Interests: {', '.join(profile.interests)}")
-        print(f"Bio: {profile.bio}")
+                print("Invalid choice, try again.")
+    
+    def display_user(self, user):
+        print(f"Name: {user['fullname']}")
+        print(f"Age: {user['age']}")
+        print(f"Location: {user['location']}")
+        print(f"Interests: {', '.join(user['interests'])}")
+        print(f"Bio: {user['bio']}")
+        print("---------------------------")

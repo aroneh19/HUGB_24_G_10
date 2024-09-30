@@ -1,3 +1,5 @@
+
+
 class FilterView:
     def __init__(self) -> None:
         self.filter = {

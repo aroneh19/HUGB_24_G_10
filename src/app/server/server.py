@@ -11,7 +11,6 @@ def home_menu():
     iface.main_menu()
     return jsonify({"message": "Displayed the home menu"}), 200
 
-
 @app.route('/users', methods=['GET'])
 def get_users():
     users = iface.get_users()

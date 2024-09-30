@@ -18,7 +18,6 @@ class SystemInterface:
 
     def add_user(self, username, password, name, bio, interests, location):
         """Add a new user via UserLogic and save to the database."""
-        # UserLogic is now responsible for managing storage
         success, msg = self.user_logic.create_user(username, password, name, bio, interests, location)
         
         if success:
