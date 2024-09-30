@@ -23,11 +23,10 @@
 #Sprint 3
 - In class meeting on 24. october we decided on a new scrum master(Vigfús Haukur Hauksson)
 - Scrum master contacted group 6 and sent them gitlab names/mail so we can review their code.
-- 
+- Kristín og Edda commited the login and the tests
+- Aron and Tómas did test for the filter and wos working in the filter and "find friends".
+- Vigfús and Bjarni did testing for create profile.
 
 - In class meeting on 1. october...........
 - 
-
-
-
 
