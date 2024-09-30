@@ -2,7 +2,7 @@ import json
 
 class User:
     def __init__(self, username: str, password: str, fullname: str, 
-                 bio: str = "", interests: list[str] = [], location: str = ""):
+                 bio: str, interests: list[str], location: str):
         
         self.username = username
         self.password = password
