@@ -21,7 +21,12 @@
 
 
 #Sprint 3
+- In class meeting on 24. october we decided on a new scrum master(Vigfús Haukur Hauksson)
+- Scrum master contacted group 6 and sent them gitlab names/mail so we can review their code.
+- 
 
+- In class meeting on 1. october...........
+- 
 
 
 
