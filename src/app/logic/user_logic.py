@@ -1,61 +1,81 @@
+from app.models.database import Database
+
 class UserLogic:
     def __init__(self):
-        '''This is the constructor for the UserLogic class'''
-        self.user_storage = {}
+        self.db = Database()
 
     def check_username(self, username):
-        '''This function checks if the username is already in the user_storage'''
-        try:
-            if username in self.user_storage:
-                return False
-            return True
-        except ValueError:
-            return False
+        """Check if username is available."""
+        if username in self.user_storage:
+            return False, "Username already taken."
+        return True, None
 
     def check_age(self, age):
-        '''This function checks if the age is valid'''
+        """Check if age is a valid integer and within acceptable range."""
         try:
-            if int(age) < 0 or int(age) > 100: # TODO: Check if integer
-                return False
-            return True
+            age = int(age)
+            if 0 <= age <= 100:
+                return True, None
+            else:
+                return False, "Age must be between 0 and 100."
         except ValueError:
-            return False
+            return False, "Age must be an integer."
 
     def check_interests(self, interests):
-        '''This function checks if the interests are valid'''
+        """Check if interests are valid."""
         if isinstance(interests, list) and len(interests) > 0:
-            return True
-        return False
+            return True, None
+        return False, "Interests must be a non-empty list."
 
     def check_location(self, location):
-        '''This function checks if the location is valid'''
-        try:
-            if location == "":
-                return False
-            return True
-        except ValueError:
-            return False
+        """Check if location is valid (non-empty)."""
+        if location.strip() != "":
+            return True, None
+        return False, "Location cannot be empty."
 
     def check_bio(self, bio):
-        '''This function checks if the bio is valid'''
-        try:
-            if bio == "":
-                return False
-        except ValueError:
-            return True
+        """Check if bio is valid (non-empty)."""
+        if bio.strip() != "":
+            return True, None
+        return False, "Bio cannot be empty."
 
     def create_user(self, username, password, name, age, bio, interests, location):
-        '''This function creates a user'''
-        try:
-            if self.check_username(username) and self.check_age(age) and self.check_interests(interests) and self.check_location(location) and self.check_bio(bio):
-                self.user_storage[username] = {"password": password, "name": name, "age": age, "bio": bio, "interests": interests, "location": location}
-                return True
-            return False
-        except ValueError:
-            return False
+        """Create a new user and save to the database."""
+        # Load users directly from the database
+        user_storage = self.db.load_users()
+        
+        # Perform checks on new user data
+        valid_username, msg = self.check_username(username, user_storage)
+        if not valid_username:
+            return False, msg
 
+        valid_age, msg = self.check_age(age)
+        if not valid_age:
+            return False, msg
 
-# user = UserLogic()
-# print(user.check_username("aron")) # True
-# print(user.check_age(1.2)) # True
-# print(user.check_interests(["football"])) # True
+        valid_interests, msg = self.check_interests(interests)
+        if not valid_interests:
+            return False, msg
+
+        valid_location, msg = self.check_location(location)
+        if not valid_location:
+            return False, msg
+
+        valid_bio, msg = self.check_bio(bio)
+        if not valid_bio:
+            return False, msg
+
+        # If all checks pass, add the user and save to the database
+        user_storage[username] = {
+            "password": password,
+            "name": name,
+            "age": int(age),
+            "bio": bio,
+            "interests": interests,
+            "location": location
+        }
+
+        # Save users back to the JSON file
+        self.db.save_users(user_storage)
+
+        return True, "User created successfully!"
