@@ -3,7 +3,7 @@ class CreateProfileView:
     def __init__(self):
         self.user_logic = UserLogic()
 
-        self.profile = {
+        self.profile = {°
             "username": None,
             "password": None,
             "name": None,

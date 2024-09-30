@@ -69,7 +69,7 @@ class UserLogic:
         user_storage[username] = {
             "password": password,
             "name": name,
-            "age": int(age),  # Store age as an integer
+            "age": int(age),
             "bio": bio,
             "interests": interests,
             "location": location
