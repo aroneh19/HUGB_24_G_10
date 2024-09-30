@@ -1,9 +1,6 @@
-from logic.user_logic import UserLogic
 class CreateProfileView:
     def __init__(self):
-        self.user_logic = UserLogic()
-
-        self.profile = {
+        self.cprofile = {
             "username": None,
             "password": None,
             "name": None,
