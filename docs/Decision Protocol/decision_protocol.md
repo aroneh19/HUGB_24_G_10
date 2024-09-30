@@ -13,11 +13,19 @@
 
 
 #Sprint 2
+- In meeting on 10. september we decided on a new scrum master(Aron Elí Ragnarsson Herreros)
+- We created the requirments.txt
+- Made the folder structure
+- Finished the README file
 
-
-
-
-
+# Somehow something went wrong when starting the project and Aron was the only one that could push for some reason
+# But we later found out how to fix it so, so Aron has all the commits in Sprint 2
+- Aron added the .gitignore
+- Tómas added all basic files in the folders
+- Aron did the json files
+- Kristín and Edda worked mainly on the server.py and interface.py eventhough we didn't fully understand how it worked
+- Vigfús did the main menu
+- We all got stuck on some "No Module found" error so we couldn't do much for Sprint 2
 
 
 #Sprint 3
