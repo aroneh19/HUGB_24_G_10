@@ -3,7 +3,6 @@ from app.models.database import Database
 class UserLogic:
     def __init__(self):
         self.db = Database()
-        self.user_storage = self.db.load_users()
 
     def check_username(self, username):
         """Check if username is available."""
@@ -41,8 +40,12 @@ class UserLogic:
         return False, "Bio cannot be empty."
 
     def create_user(self, username, password, name, age, bio, interests, location):
-        """Attempt to create a user after all checks are passed."""
-        valid_username, msg = self.check_username(username)
+        """Create a new user and save to the database."""
+        # Load users directly from the database
+        user_storage = self.db.load_users()
+        
+        # Perform checks on new user data
+        valid_username, msg = self.check_username(username, user_storage)
         if not valid_username:
             return False, msg
 
@@ -62,8 +65,8 @@ class UserLogic:
         if not valid_bio:
             return False, msg
 
-        # If all validations pass, create the user
-        self.user_storage[username] = {
+        # If all checks pass, add the user and save to the database
+        user_storage[username] = {
             "password": password,
             "name": name,
             "age": int(age),  # Store age as an integer
@@ -72,5 +75,7 @@ class UserLogic:
             "location": location
         }
 
-        self.db.save_users(self.user_storage)
+        # Save users back to the JSON file
+        self.db.save_users(user_storage)
+
         return True, "User created successfully!"

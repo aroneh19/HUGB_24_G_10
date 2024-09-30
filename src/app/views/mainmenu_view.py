@@ -1,11 +1,9 @@
 import sys
-from app.server.interface import SystemInterface
 from app.views.filter_view import FilterView
 from app.views.swiping_view import SwipingView
 
 class MainMenuView:
     def __init__(self) -> None:
-        self.iface = SystemInterface()
         self.filter = FilterView()
         self.swiping = SwipingView()
     
@@ -29,7 +27,3 @@ class MainMenuView:
                 print("Profile")
             else:
                 print("Invalid choice, try again.")
-
-if __name__ == "__main__":
-    main_menu = MainMenuView()
-    main_menu.main_menu()

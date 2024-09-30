@@ -1,7 +1,7 @@
 import json
 
 class Database:
-    def __init__(self, data_file="src/app/data/users.json"):
+    def __init__(self, data_file="app/data/users.json"):
         self.data_file = data_file
 
     def load_users(self):

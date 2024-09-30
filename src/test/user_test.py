@@ -11,23 +11,23 @@ class TestUser(unittest.TestCase):
         self.assertFalse(self.user_logic.check_username("existing_user"))
 
     def test_check_age(self):
-        self.assertTrue(self.user_logic.check_age(25))
-        self.assertFalse(self.user_logic.check_age(-1))
-        self.assertFalse(self.user_logic.check_age(150))
-        self.assertFalse(self.user_logic.check_age("invalid_age"))
+        self.assertTrue(self.user_logic.check_age(25)[0])
+        self.assertFalse(self.user_logic.check_age(-1)[0])
+        self.assertFalse(self.user_logic.check_age(150)[0])
+        self.assertFalse(self.user_logic.check_age("invalid_age")[0])
 
     def test_check_interests(self):
-        self.assertTrue(self.user_logic.check_interests(["basketball", "coding"]))
-        self.assertFalse(self.user_logic.check_interests([]))
-        self.assertFalse(self.user_logic.check_interests("not a list"))
+        self.assertTrue(self.user_logic.check_interests(["basketball", "coding"])[0])
+        self.assertFalse(self.user_logic.check_interests([])[0])
+        self.assertFalse(self.user_logic.check_interests("not a list")[0])
 
     def test_check_location(self):
-        self.assertTrue(self.user_logic.check_location("Reykjavik"))
-        self.assertFalse(self.user_logic.check_location(""))
+        self.assertTrue(self.user_logic.check_location("Reykjavik")[0])
+        self.assertFalse(self.user_logic.check_location("")[0])
 
     def test_check_bio(self):
-        self.assertTrue(self.user_logic.check_bio("I love sports"))
-        self.assertFalse(self.user_logic.check_bio(""))
+        self.assertTrue(self.user_logic.check_bio("I love sports")[0])
+        self.assertFalse(self.user_logic.check_bio("")[0])
 
     def test_create_user(self):
         result = self.user_logic.create_user(

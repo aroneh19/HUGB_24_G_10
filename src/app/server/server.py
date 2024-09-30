@@ -5,6 +5,13 @@ app = Flask(__name__)
 
 iface = SystemInterface()
 
+@app.route('/')
+def home_menu():
+    """Route to display the home menu when the server starts."""
+    iface.main_menu()
+    return jsonify({"message": "Displayed the home menu"}), 200
+
+
 @app.route('/users', methods=['GET'])
 def get_users():
     users = iface.get_users()

@@ -1,20 +1,27 @@
+from app.models.database import Database
 from app.logic.user_logic import UserLogic
 from app.logic.filter_logic import FilterLogic
 from app.logic.message_logic import MessageLogic
+from app.views.mainmenu_view import MainMenuView
 
 class SystemInterface:
-    """A class representing our interface to the outside."""
-  
     def __init__(self):
+        self.db = Database()
         self.user_logic = UserLogic()
         self.filter_logic = FilterLogic()
         self.message_logic = MessageLogic()
 
-    def get_users(self):
-        return self.user_logic.get_all_users()
+    def main_menu(self):
+        """Display the main menu."""
+        main_menu = MainMenuView()
+        main_menu.main_menu()
 
-    def add_user(self, user_data):
-        return self.user_logic.create_user(user_data)
-    
-    def an_operation_without_params(self):
-        return {"msg": "Operation successful"}
+    def add_user(self, username, password, name, bio, interests, location):
+        """Add a new user via UserLogic and save to the database."""
+        # UserLogic is now responsible for managing storage
+        success, msg = self.user_logic.create_user(username, password, name, bio, interests, location)
+        
+        if success:
+            return {"message": msg}, 201
+        else:
+            return {"error": msg}, 400
