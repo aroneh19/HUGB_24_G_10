@@ -3,7 +3,7 @@
         "username": "aron",
         "password": "aron123",
         "fullname": "Aron Elí",
-        "interests": ["football"],
+        "interests": ["Sports"],
         "location": "Reykjavík",
         "age": 20,
         "bio": "I love football"
@@ -12,7 +12,7 @@
         "username": "tomas",
         "password": "tomas123",
         "fullname": "Tómas Karl",
-        "interests": ["basketball", "outdoor activities"],
+        "interests": ["Sports", "Gaming"],
         "location": "Reykjavík",
         "age": 19,
         "bio": "I'm a basketball player and I love outdoor activities."
