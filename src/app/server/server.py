@@ -11,6 +11,22 @@ def home_menu():
     iface.main_menu()
     return jsonify({"message": "Displayed the home menu"}), 200
 
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+
+    username = data.get('username')
+    password = data.get('password')
+
+    if iface.verify_user(username, password):
+        return jsonify({"message": "Login successful"}), 200
+    else: 
+        return jsonify({"error": "invalid username or password"}), 401
+    
+def login_user(self, post_data):
+        """Helper method to log in a user via a POST request."""
+        return self.app.post("/login", json=post_data)
+
 @app.route('/users', methods=['GET'])
 def get_users():
     users = iface.get_users()
