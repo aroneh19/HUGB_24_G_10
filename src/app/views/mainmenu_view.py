@@ -33,3 +33,7 @@ class MainMenuView:
                 edit_view.display_edit_profile()
             else:
                 print("Invalid choice, try again.")
+            
+if __name__ == "__main__":
+    main_menu = MainMenuView() 
+    main_menu.main_menu()

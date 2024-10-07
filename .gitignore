@@ -42,3 +42,4 @@ requirements.txt
 
 htmlcov/
 .pytest_cache/
+.history/
