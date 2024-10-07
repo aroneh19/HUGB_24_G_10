@@ -1,255 +1,353 @@
 [
-    {
-        "username": "aron",
-        "password": "aron123",
-        "fullname": "Aron Elí",
-        "interests": ["Sports"],
-        "location": "Reykjavík",
-        "age": 20,
-        "bio": "I love football"
-    },
-    {
-        "username": "tomas",
-        "password": "tomas123",
-        "fullname": "Tómas Karl",
-        "interests": ["Sports", "Gaming"],
-        "location": "Reykjavík",
-        "age": 19,
-        "bio": "I'm a basketball player and I love outdoor activities."
-    },
-    {
-        "username": "johndoe",
-        "password": "john123",
-        "fullname": "John Doe",
-        "interests": ["Reading", "Hiking", "Photography"],
-        "location": "New York",
-        "age": 28,
-        "bio": "I enjoy quiet nights with a good book and hiking on the weekends."
-    },
-    {
-        "username": "janedoe",
-        "password": "jane123",
-        "fullname": "Jane Doe",
-        "interests": ["Cooking", "Movies", "Travel"],
-        "location": "Los Angeles",
-        "age": 25,
-        "bio": "I'm passionate about traveling and trying new cuisines."
-    },
-    {
-        "username": "alicew",
-        "password": "alice123",
-        "fullname": "Alice Wonderland",
-        "interests": ["Gardening", "Writing", "Yoga"],
-        "location": "Chicago",
-        "age": 30,
-        "bio": "Avid gardener and yoga enthusiast."
-    },
-    {
-        "username": "bobsmith",
-        "password": "bob123",
-        "fullname": "Bob Smith",
-        "interests": ["Video Games", "Music", "Art"],
-        "location": "San Francisco",
-        "age": 22,
-        "bio": "Aspiring game developer and music lover."
-    },
-    {
-        "username": "charlieb",
-        "password": "charlie123",
-        "fullname": "Charlie Brown",
-        "interests": ["Fitness", "Travel", "Science"],
-        "location": "London",
-        "age": 27,
-        "bio": "Love keeping fit and exploring the mysteries of the universe."
-    },
-    {
-        "username": "davidk",
-        "password": "david123",
-        "fullname": "David King",
-        "interests": ["Technology", "Gaming", "Movies"],
-        "location": "Toronto",
-        "age": 24,
-        "bio": "Tech enthusiast and movie buff."
-    },
-    {
-        "username": "emilyr",
-        "password": "emily123",
-        "fullname": "Emily Rose",
-        "interests": ["Fashion", "Photography", "Music"],
-        "location": "Paris",
-        "age": 26,
-        "bio": "Fashion photographer based in Paris."
-    },
-    {
-        "username": "frankj",
-        "password": "frank123",
-        "fullname": "Frank Johnson",
-        "interests": ["Dancing", "Cooking", "Meditation"],
-        "location": "Berlin",
-        "age": 31,
-        "bio": "Dancing through life and cooking up a storm."
-    },
-    {
-        "username": "graceh",
-        "password": "grace123",
-        "fullname": "Grace Hopper",
-        "interests": ["Technology", "Books", "Art"],
-        "location": "Seattle",
-        "age": 29,
-        "bio": "Coder by day, bookworm by night."
-    },
-    {
-        "username": "harryp",
-        "password": "harry123",
-        "fullname": "Harry Potter",
-        "interests": ["Magic", "Books", "Sports"],
-        "location": "London",
-        "age": 21,
-        "bio": "Aspiring wizard, big fan of Quidditch."
-    },
-    {
-        "username": "isabellab",
-        "password": "bella123",
-        "fullname": "Isabella Brown",
-        "interests": ["Music", "Hiking", "Science"],
-        "location": "Sydney",
-        "age": 24,
-        "bio": "Music lover and nature enthusiast."
-    },
-    {
-        "username": "jasonm",
-        "password": "jason123",
-        "fullname": "Jason Mraz",
-        "interests": ["Music", "Yoga", "Surfing"],
-        "location": "Los Angeles",
-        "age": 32,
-        "bio": "Singer-songwriter and yoga enthusiast."
-    },
-    {
-        "username": "katherines",
-        "password": "katherine123",
-        "fullname": "Katherine Smith",
-        "interests": ["Art", "Travel", "Fitness"],
-        "location": "Tokyo",
-        "age": 27,
-        "bio": "Art enthusiast with a passion for travel and fitness."
-    },
-    {
-        "username": "liamg",
-        "password": "liam123",
-        "fullname": "Liam Gallagher",
-        "interests": ["Sports", "Movies", "Books"],
-        "location": "Manchester",
-        "age": 22,
-        "bio": "Football fan and bookworm."
-    },
-    {
-        "username": "melissaj",
-        "password": "melissa123",
-        "fullname": "Melissa Joan",
-        "interests": ["Yoga", "Cooking", "Fashion"],
-        "location": "San Diego",
-        "age": 29,
-        "bio": "Yoga lover with a passion for fashion and cooking."
-    },
-    {
-        "username": "nickc",
-        "password": "nick123",
-        "fullname": "Nick Carter",
-        "interests": ["Music", "Dancing", "Movies"],
-        "location": "Miami",
-        "age": 31,
-        "bio": "Music producer and dance enthusiast."
-    },
-    {
-        "username": "oliverj",
-        "password": "oliver123",
-        "fullname": "Oliver James",
-        "interests": ["Photography", "Travel", "Art"],
-        "location": "Amsterdam",
-        "age": 26,
-        "bio": "Photographer with a love for travel and art."
-    },
-    {
-        "username": "paigew",
-        "password": "paige123",
-        "fullname": "Paige Williams",
-        "interests": ["Cooking", "Fitness", "Books"],
-        "location": "Melbourne",
-        "age": 28,
-        "bio": "Fitness trainer who loves cooking and reading."
-    },
-    {
-        "username": "quentins",
-        "password": "quentin123",
-        "fullname": "Quentin Smith",
-        "interests": ["Movies", "Gaming", "Technology"],
-        "location": "San Francisco",
-        "age": 33,
-        "bio": "Tech geek and movie buff."
-    },
-    {
-        "username": "rachelm",
-        "password": "rachel123",
-        "fullname": "Rachel McAdams",
-        "interests": ["Books", "Movies", "Travel"],
-        "location": "Toronto",
-        "age": 35,
-        "bio": "Book lover and world traveler."
-    },
-    {
-        "username": "stevenl",
-        "password": "steven123",
-        "fullname": "Steven Lee",
-        "interests": ["Fitness", "Hiking", "Music"],
-        "location": "Vancouver",
-        "age": 30,
-        "bio": "Personal trainer and music enthusiast."
-    },
-    {
-        "username": "tiffanyg",
-        "password": "tiffany123",
-        "fullname": "Tiffany Green",
-        "interests": ["Fashion", "Photography", "Travel"],
-        "location": "New York",
-        "age": 25,
-        "bio": "Fashion blogger and photography lover."
-    },
-    {
-        "username": "umarh",
-        "password": "umar123",
-        "fullname": "Umar Hussein",
-        "interests": ["Technology", "Books", "Sports"],
-        "location": "Dubai",
-        "age": 29,
-        "bio": "Software engineer and sports fanatic."
-    },
-    {
-        "username": "victoriaw",
-        "password": "victoria123",
-        "fullname": "Victoria White",
-        "interests": ["Gardening", "Cooking", "Travel"],
-        "location": "Rome",
-        "age": 34,
-        "bio": "Travel blogger with a love for gardening and cooking."
-    },
-    {
-        "username": "willsmith",
-        "password": "will123",
-        "fullname": "Will Smith",
-        "interests": ["Movies", "Music", "Comedy"],
-        "location": "Los Angeles",
-        "age": 40,
-        "bio": "Actor and musician with a passion for comedy."
-    },
-    {
-        "username": "xavierp",
-        "password": "xavier123",
-        "fullname": "Xavier Perez",
-        "interests": ["Gaming", "Technology", "Movies"],
-        "location": "Barcelona",
-        "age": 26,
-        "bio": "Gamer and tech enthusiast from Spain."
-    }
-
+  {
+    "username": "aron",
+    "password": "aron123",
+    "fullname": "Aron Elí",
+    "interests": ["Sports"],
+    "location": "Reykjavík",
+    "age": 20,
+    "bio": "I love football"
+  },
+  {
+    "username": "tomas",
+    "password": "tomas123",
+    "fullname": "Tómas Karl",
+    "interests": ["Sports", "Gaming"],
+    "location": "Kópavogur",
+    "age": 19,
+    "bio": "I'm a basketball player and I love outdoor activities."
+  },
+  {
+    "username": "johndoe",
+    "password": "john123",
+    "fullname": "John Doe",
+    "interests": ["Reading", "Hiking", "Photography"],
+    "location": "Hafnarfjörður",
+    "age": 28,
+    "bio": "I enjoy quiet nights with a good book and hiking on the weekends."
+  },
+  {
+    "username": "janedoe",
+    "password": "jane123",
+    "fullname": "Jane Doe",
+    "interests": ["Cooking", "Movies", "Travel"],
+    "location": "Akureyri",
+    "age": 25,
+    "bio": "I'm passionate about traveling and trying new cuisines."
+  },
+  {
+    "username": "alicew",
+    "password": "alice123",
+    "fullname": "Alice Wonderland",
+    "interests": ["Gardening", "Writing", "Yoga"],
+    "location": "Reykjanesbær",
+    "age": 30,
+    "bio": "Avid gardener and yoga enthusiast."
+  },
+  {
+    "username": "bobsmith",
+    "password": "bob123",
+    "fullname": "Bob Smith",
+    "interests": ["Video Games", "Music", "Art"],
+    "location": "Garðabær",
+    "age": 22,
+    "bio": "Aspiring game developer and music lover."
+  },
+  {
+    "username": "charlieb",
+    "password": "charlie123",
+    "fullname": "Charlie Brown",
+    "interests": ["Fitness", "Travel", "Science"],
+    "location": "Mosfellsbær",
+    "age": 27,
+    "bio": "Love keeping fit and exploring the mysteries of the universe."
+  },
+  {
+    "username": "davidk",
+    "password": "david123",
+    "fullname": "David King",
+    "interests": ["Technology", "Gaming", "Movies"],
+    "location": "Árborg",
+    "age": 24,
+    "bio": "Tech enthusiast and movie buff."
+  },
+  {
+    "username": "emilyr",
+    "password": "emily123",
+    "fullname": "Emily Rose",
+    "interests": ["Fashion", "Photography", "Music"],
+    "location": "Akranes",
+    "age": 26,
+    "bio": "Fashion photographer based in Iceland."
+  },
+  {
+    "username": "frankj",
+    "password": "frank123",
+    "fullname": "Frank Johnson",
+    "interests": ["Dancing", "Cooking", "Meditation"],
+    "location": "Fjarðabyggð",
+    "age": 31,
+    "bio": "Dancing through life and cooking up a storm."
+  },
+  {
+    "username": "graceh",
+    "password": "grace123",
+    "fullname": "Grace Hopper",
+    "interests": ["Technology", "Books", "Art"],
+    "location": "Hveragerði",
+    "age": 29,
+    "bio": "Coder by day, bookworm by night."
+  },
+  {
+    "username": "harryp",
+    "password": "harry123",
+    "fullname": "Harry Potter",
+    "interests": ["Magic", "Books", "Sports"],
+    "location": "Vestmannaeyjar",
+    "age": 21,
+    "bio": "Aspiring wizard, big fan of Quidditch."
+  },
+  {
+    "username": "isabellab",
+    "password": "bella123",
+    "fullname": "Isabella Brown",
+    "interests": ["Music", "Hiking", "Science"],
+    "location": "Grindavík",
+    "age": 24,
+    "bio": "Music lover and nature enthusiast."
+  },
+  {
+    "username": "jasonm",
+    "password": "jason123",
+    "fullname": "Jason Mraz",
+    "interests": ["Music", "Yoga", "Surfing"],
+    "location": "Seltjarnarnes",
+    "age": 32,
+    "bio": "Singer-songwriter and yoga enthusiast."
+  },
+  {
+    "username": "katherines",
+    "password": "katherine123",
+    "fullname": "Katherine Smith",
+    "interests": ["Art", "Travel", "Fitness"],
+    "location": "Borgarbyggð",
+    "age": 27,
+    "bio": "Art enthusiast with a passion for travel and fitness."
+  },
+  {
+    "username": "liamg",
+    "password": "liam123",
+    "fullname": "Liam Gallagher",
+    "interests": ["Sports", "Movies", "Books"],
+    "location": "Höfn",
+    "age": 22,
+    "bio": "Football fan and bookworm."
+  },
+  {
+    "username": "melissaj",
+    "password": "melissa123",
+    "fullname": "Melissa Joan",
+    "interests": ["Yoga", "Cooking", "Fashion"],
+    "location": "Egilsstaðir",
+    "age": 29,
+    "bio": "Yoga lover with a passion for fashion and cooking."
+  },
+  {
+    "username": "nickc",
+    "password": "nick123",
+    "fullname": "Nick Carter",
+    "interests": ["Music", "Dancing", "Movies"],
+    "location": "Dalvík",
+    "age": 31,
+    "bio": "Music producer and dance enthusiast."
+  },
+  {
+    "username": "oliverj",
+    "password": "oliver123",
+    "fullname": "Oliver James",
+    "interests": ["Photography", "Travel", "Art"],
+    "location": "Húsavík",
+    "age": 26,
+    "bio": "Photographer with a love for travel and art."
+  },
+  {
+    "username": "paigew",
+    "password": "paige123",
+    "fullname": "Paige Williams",
+    "interests": ["Cooking", "Fitness", "Books"],
+    "location": "Selfoss",
+    "age": 28,
+    "bio": "Fitness trainer who loves cooking and reading."
+  },
+  {
+    "username": "quentins",
+    "password": "quentin123",
+    "fullname": "Quentin Smith",
+    "interests": ["Movies", "Gaming", "Technology"],
+    "location": "Ísafjörður",
+    "age": 33,
+    "bio": "Tech geek and movie buff."
+  },
+  {
+    "username": "rachelm",
+    "password": "rachel123",
+    "fullname": "Rachel McAdams",
+    "interests": ["Books", "Movies", "Travel"],
+    "location": "Sauðárkrókur",
+    "age": 35,
+    "bio": "Book lover and world traveler."
+  },
+  {
+    "username": "stevenl",
+    "password": "steven123",
+    "fullname": "Steven Lee",
+    "interests": ["Fitness", "Hiking", "Music"],
+    "location": "Siglufjörður",
+    "age": 30,
+    "bio": "Personal trainer and music enthusiast."
+  },
+  {
+    "username": "tiffanyg",
+    "password": "tiffany123",
+    "fullname": "Tiffany Green",
+    "interests": ["Fashion", "Photography", "Travel"],
+    "location": "Bolungarvík",
+    "age": 25,
+    "bio": "Fashion blogger and photography lover."
+  },
+  {
+    "username": "umarh",
+    "password": "umar123",
+    "fullname": "Umar Hussein",
+    "interests": ["Technology", "Books", "Sports"],
+    "location": "Vogar",
+    "age": 29,
+    "bio": "Software engineer and sports fanatic."
+  },
+  {
+    "username": "victoriaw",
+    "password": "victoria123",
+    "fullname": "Victoria White",
+    "interests": ["Gardening", "Cooking", "Travel"],
+    "location": "Reykjavík",
+    "age": 34,
+    "bio": "Travel blogger with a love for gardening and cooking."
+  },
+  {
+    "username": "willsmith",
+    "password": "will123",
+    "fullname": "Will Smith",
+    "interests": ["Movies", "Music", "Comedy"],
+    "location": "Kópavogur",
+    "age": 40,
+    "bio": "Actor and musician with a passion for comedy."
+  },
+  {
+    "username": "xavierp",
+    "password": "xavier123",
+    "fullname": "Xavier Perez",
+    "interests": ["Gaming", "Technology", "Movies"],
+    "location": "Hafnarfjörður",
+    "age": 26,
+    "bio": "Gamer and tech enthusiast from Iceland."
+  },
+  {
+    "username": "zoeh",
+    "password": "zoe123",
+    "fullname": "Zoe Harris",
+    "interests": ["Music", "Yoga", "Dancing"],
+    "location": "Akureyri",
+    "age": 22,
+    "bio": "Yoga instructor who loves music and dancing."
+  },
+  {
+    "username": "billym",
+    "password": "billy123",
+    "fullname": "Billy Madison",
+    "interests": ["Sports", "Travel", "Cooking"],
+    "location": "Reykjanesbær",
+    "age": 27,
+    "bio": "Aspiring chef who loves traveling and playing sports."
+  },
+  {
+    "username": "annal",
+    "password": "anna123",
+    "fullname": "Anna Lee",
+    "interests": ["Photography", "Fashion", "Movies"],
+    "location": "Garðabær",
+    "age": 24,
+    "bio": "Fashion photographer and movie enthusiast."
+  },
+  {
+    "username": "mattc",
+    "password": "matt123",
+    "fullname": "Matt Carter",
+    "interests": ["Technology", "Books", "Science"],
+    "location": "Mosfellsbær",
+    "age": 31,
+    "bio": "Tech geek with a love for reading and science."
+  },
+  {
+    "username": "nataliew",
+    "password": "natalie123",
+    "fullname": "Natalie Wood",
+    "interests": ["Cooking", "Gardening", "Movies"],
+    "location": "Árborg",
+    "age": 29,
+    "bio": "Gardener who loves cooking and watching movies."
+  },
+  {
+    "username": "tommyh",
+    "password": "tommy123",
+    "fullname": "Tommy Hanks",
+    "interests": ["Movies", "Art", "Technology"],
+    "location": "Akranes",
+    "age": 28,
+    "bio": "Film buff and tech enthusiast who loves art."
+  },
+  {
+    "username": "emilyk",
+    "password": "emily123",
+    "fullname": "Emily King",
+    "interests": ["Yoga", "Photography", "Science"],
+    "location": "Fjarðabyggð",
+    "age": 27,
+    "bio": "Photographer and yoga enthusiast with a love for science."
+  },
+  {
+    "username": "brians",
+    "password": "brian123",
+    "fullname": "Brian Smith",
+    "interests": ["Music", "Travel", "Books"],
+    "location": "Hveragerði",
+    "age": 26,
+    "bio": "Musician and book lover who enjoys traveling."
+  },
+  {
+    "username": "sarahj",
+    "password": "sarah123",
+    "fullname": "Sarah Johnson",
+    "interests": ["Fashion", "Fitness", "Photography"],
+    "location": "Vestmannaeyjar",
+    "age": 30,
+    "bio": "Fashion blogger and fitness enthusiast."
+  },
+  {
+    "username": "kevink",
+    "password": "kevin123",
+    "fullname": "Kevin Keller",
+    "interests": ["Technology", "Movies", "Gaming"],
+    "location": "Grindavík",
+    "age": 32,
+    "bio": "Tech enthusiast and gamer who loves watching movies."
+  },
+  {
+    "username": "jennyh",
+    "password": "jenny123",
+    "fullname": "Jenny Howard",
+    "interests": ["Music", "Art", "Travel"],
+    "location": "Seltjarnarnes",
+    "age": 25,
+    "bio": "Musician with a passion for art and travel."
+  }
 ]

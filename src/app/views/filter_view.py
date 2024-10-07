@@ -56,4 +56,26 @@ class FilterView:
         pass
 
     def filter_location(self):
-        pass
+        locations_list = [
+            "Reykjavík", "Kópavogur", "Hafnarfjörður", "Akureyri", "Reykjanesbær", 
+            "Garðabær", "Mosfellsbær", "Árborg", "Akranes", "Fjarðabyggð", 
+            "Hveragerði", "Vestmannaeyjar", "Grindavík", "Seltjarnarnes", "Borgarbyggð", 
+            "Höfn", "Egilsstaðir", "Dalvík", "Húsavík", "Selfoss", 
+            "Ísafjörður", "Sauðárkrókur", "Siglufjörður", "Bolungarvík", "Vogar"
+        ]
+
+        while True:
+            for i, location in enumerate(locations_list, 1):
+                print(f"{i}. {location}")
+
+            choice = input("Enter choice or 'b' to go back: ")
+            if choice == "b":
+                break
+            if choice.isdigit() and 1 <= int(choice) <= len(locations_list):
+                selected_location = locations_list[int(choice) - 1]
+                self.filter["location"] = selected_location
+                print(f"Location filter set: {self.filter['location']}")
+                break
+            else:
+                print("Invalid choice, try again.")
+
