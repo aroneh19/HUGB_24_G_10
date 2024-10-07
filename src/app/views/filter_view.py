@@ -1,5 +1,3 @@
-
-
 class FilterView:
     def __init__(self) -> None:
         self.filter = {
@@ -34,6 +32,7 @@ class FilterView:
                 print("Invalid choice, try again.")
     
     def filter_interests(self):
+        """Get the interests to filter by."""
         interests_list = [
             "Sports", "Books", "Music", "Movies", "Video Games", "Art", 
             "Cooking", "Fitness", "Travel", "Photography", "Fashion", 
@@ -53,7 +52,33 @@ class FilterView:
             print(self.filter)
 
     def filter_age(self):
-        pass
+        """Get the minimum and maximum age to filter by."""
+        while True:
+            min_age = input("Enter minimum age: ")
+            max_age = input("Enter maximum age: ")
+            valid, result = self.age_validator(min_age, max_age)
+            if valid:
+                self.filter["age"] = result
+                break
+            else:
+                print(result)
+    
+    def age_validator(self, min_age, max_age):
+        """Validate the minimum and maximum age, ensuring they are integers and within the valid range."""
+        try:
+            min_age = int(min_age)
+            max_age = int(max_age)
+
+            if not (1 <= min_age <= 100):
+                return False, "Minimum age must be between 1 and 100."
+            if not (1 <= max_age <= 100):
+                return False, "Maximum age must be between 1 and 100."
+            if min_age > max_age:
+                return False, "Minimum age cannot be greater than maximum age."
+            return True, (min_age, max_age)
+        except ValueError:
+            return False, "Invalid input. Ages must be numbers."
+
 
     def filter_location(self):
         pass

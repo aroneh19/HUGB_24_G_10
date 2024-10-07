@@ -37,9 +37,12 @@ coverage/
 # MacOS #
 .DS_Store
 
-# Requirmenets File #
+# Requirements File #
 requirements.txt
 
 htmlcov/
 .pytest_cache/
 .history/
+
+# Project specific files #
+users.json
