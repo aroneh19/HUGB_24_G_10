@@ -1,20 +1,40 @@
-[
-    {
-        "username": "aron",
-        "password": "aron123",
-        "fullname": "Aron Elí",
-        "interests": ["Sports"],
-        "location": "Reykjavík",
+{
+    "bjarni": {
+        "password": "bjarni123",
+        "name": "Bjarni King",
         "age": 20,
-        "bio": "I love football"
+        "bio": "eg er 190",
+        "interests": [
+            "Gardening",
+            "Yoga",
+            "Gaming"
+        ],
+        "location": "kopavogur"
     },
-    {
-        "username": "tomas",
-        "password": "tomas123",
-        "fullname": "Tómas Karl",
-        "interests": ["Sports", "Gaming"],
-        "location": "Reykjavík",
-        "age": 19,
-        "bio": "I'm a basketball player and I love outdoor activities."
+    "fúsi": {
+        "password": "egerbestur",
+        "name": "vigfús",
+        "age": 20,
+        "bio": "eg tek 110 í bekk",
+        "interests": [
+            "Fitness",
+            "Gaming",
+            "Sports",
+            "Technology",
+            "Technology",
+            "Gardening"
+        ],
+        "location": "hafnarfjörður"
+    },
+    "jón": {
+        "password": "asda",
+        "name": "jónatan jökull",
+        "age": 20,
+        "bio": "blbal",
+        "interests": [
+            "Gaming",
+            "Sports"
+        ],
+        "location": "reyðarfjörður"
     }
-]
+}

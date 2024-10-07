@@ -10,12 +10,16 @@ class Database:
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 users = json.load(file)
-            return users
+                if isinstance(users, dict):
+                    return users
+                else:
+                    return {}
         except FileNotFoundError:
             print(f"Error: {self.users_file} not found.")
-            return []
+            return {}
+
     
-    def save_users(self):
+    def save_users(self, user_storage):
         """Save users to JSON file."""
-        with open(self.users_file, 'w') as file:
-            json.dump(self.user_storage, file, indent=4)
+        with open(self.users_file, 'w', encoding='utf-8') as file:
+            json.dump(user_storage, file, ensure_ascii=False, indent=4)

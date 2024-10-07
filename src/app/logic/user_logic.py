@@ -4,9 +4,9 @@ class UserLogic:
     def __init__(self):
         self.db = Database()
 
-    def check_username(self, username):
+    def check_username(self, username, user_storage):
         """Check if username is available."""
-        if username in self.user_storage:
+        if username in user_storage:
             return False, "Username already taken."
         return True, None
 
