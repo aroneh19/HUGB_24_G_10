@@ -1,5 +1,5 @@
 from app.server.interface import SystemInterface
-from flask import Flask, jsonify, request
+from flask import Flask, session, jsonify, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -26,6 +26,13 @@ def login():
 def login_user(self, post_data):
         """Helper method to log in a user via a POST request."""
         return self.app.post("/login", json=post_data)
+
+@app.route('/logout')
+def logout():
+    # Clear the session data, logging out the user
+    session.clear()
+    
+    return redirect(url_for('login'))
 
 @app.route('/users', methods=['GET'])
 def get_users():
