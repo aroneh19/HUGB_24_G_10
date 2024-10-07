@@ -9,14 +9,24 @@ class Database:
         """Load user data from the JSON file."""
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
-                users = json.load(file)
-                if isinstance(users, dict):
-                    return users
-                else:
-                    return {}
+                if file.readable():
+                    file.seek(0) 
+                    content = file.read().strip()
+                    if not content:
+                        return []
+                    else:
+                        users = json.loads(content)
+                        if isinstance(users, list):
+                            return users
+                        else:
+                            return [] 
         except FileNotFoundError:
             print(f"Error: {self.users_file} not found.")
-            return {}
+            return []
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON: {e}")
+            return []
+
 
     
     def save_users(self, user_storage):

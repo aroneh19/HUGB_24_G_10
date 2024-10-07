@@ -1,40 +1,15 @@
-{
-    "bjarni": {
-        "password": "bjarni123",
-        "name": "Bjarni King",
+[
+    {
+        "username": "bjarni",
+        "password": "janus",
+        "name": "bjarni áááá",
         "age": 20,
-        "bio": "eg er 190",
+        "bio": "er 190",
         "interests": [
-            "Gardening",
-            "Yoga",
-            "Gaming"
-        ],
-        "location": "kopavogur"
-    },
-    "fúsi": {
-        "password": "egerbestur",
-        "name": "vigfús",
-        "age": 20,
-        "bio": "eg tek 110 í bekk",
-        "interests": [
-            "Fitness",
-            "Gaming",
             "Sports",
-            "Technology",
-            "Technology",
-            "Gardening"
+            "Books",
+            "Music"
         ],
-        "location": "hafnarfjörður"
-    },
-    "jón": {
-        "password": "asda",
-        "name": "jónatan jökull",
-        "age": 20,
-        "bio": "blbal",
-        "interests": [
-            "Gaming",
-            "Sports"
-        ],
-        "location": "reyðarfjörður"
+        "location": "kópavogur"
     }
-}
+]
