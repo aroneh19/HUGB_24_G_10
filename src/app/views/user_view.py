@@ -1,4 +1,5 @@
-from logic.user_logic import UserLogic
+from app.logic.user_logic import UserLogic
+
 class CreateProfileView:
     def __init__(self):
         self.user_logic = UserLogic()
@@ -24,12 +25,13 @@ class CreateProfileView:
             interests = self.get_interests()
             location = input("Enter your location: ")
 
-            if self.user_logic.create_user(username, password, name, age, bio, interests, location):
+            success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+            if success:
                 print(f"Profile for {username} created successfully!")
                 break
             else:
-                print("Failed to create profile. Please try again.")
-                print("Check if the username already exists or other information is invalid.")
+                print(f"Failed to create profile: {message}")
+
     
     def get_interests(self):
         print("Please select your interests from the list below:")
