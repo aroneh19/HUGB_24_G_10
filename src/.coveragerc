@@ -1,0 +1,10 @@
+[run]
+# Omit certain files from the coverage
+omit =
+    */__init__.py
+    */database.py
+    */*_model.py
+    */*_logic.py
+    */*_view.py
+    */interface.py
+    */server.py
