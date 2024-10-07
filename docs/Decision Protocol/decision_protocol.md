@@ -35,6 +35,14 @@
 - Aron and Tómas did test for the filter and wos working in the filter and "find friends".
 - Vigfús and Bjarni did testing for create profile.
 
-- In class meeting on 1. october...........
-- 
+- In class meeting on 1. october we talked about what we want to do next with the project
+- All of us choosed a case to work on
+- Vigfús and Bjarni worked together in create profile and it works now, and they did tests for that too and are now working in edit profile so we can edit profile users.
+- Logout is nearly done
+- swipe feature nearly done
+- create profile 90% done
+- Aron - filter interest/age, testing, swiping feature
+- Tómas - filter location, byrjaður á að save-a matches
+- Kristín and Edda worked together in logout
+
 
