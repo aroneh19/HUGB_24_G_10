@@ -1,5 +1,5 @@
 from app.server.interface import SystemInterface
-from flask import Flask, jsonify, request
+from flask import Flask, session, jsonify, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -10,6 +10,29 @@ def home_menu():
     """Route to display the home menu when the server starts."""
     iface.main_menu()
     return jsonify({"message": "Displayed the home menu"}), 200
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+
+    username = data.get('username')
+    password = data.get('password')
+
+    if iface.verify_user(username, password):
+        return jsonify({"message": "Login successful"}), 200
+    else: 
+        return jsonify({"error": "invalid username or password"}), 401
+    
+def login_user(self, post_data):
+        """Helper method to log in a user via a POST request."""
+        return self.app.post("/login", json=post_data)
+
+@app.route('/logout')
+def logout():
+    # Clear the session data, logging out the user
+    session.clear()
+    
+    return redirect(url_for('login'))
 
 @app.route('/users', methods=['GET'])
 def get_users():
