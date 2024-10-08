@@ -43,11 +43,11 @@ coverage erase
 ```
 Runs all tests in module "test/base_test.py" and records coverage:
 ```bash
-coverage run -m unittest test.base_test
+coverage run --omit="test/*" -m unittest test.base_test
 ```
 Same as above, but does not override previous coverage information:
 ```bash
-coverage run --append -m unittest test.base_test
+coverage run --append --omit="test/*" -m unittest test.base_test
 ```
 Only collects coverage information about the code in app folder:
 ```bash
