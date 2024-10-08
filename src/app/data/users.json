@@ -4,7 +4,7 @@
     "password": "aron123",
     "fullname": "Aron Elí",
     "interests": ["Sports"],
-    "location": "Reykjavík",
+    "location": "Kópavogur",
     "age": 20,
     "bio": "I love football"
   },
@@ -13,7 +13,7 @@
     "password": "tomas123",
     "fullname": "Tómas Karl",
     "interests": ["Sports", "Gaming"],
-    "location": "Kópavogur",
+    "location": "Reykjavík",
     "age": 19,
     "bio": "I'm a basketball player and I love outdoor activities."
   },
