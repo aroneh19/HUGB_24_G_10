@@ -49,6 +49,7 @@
 - In meeting on 8. october we decided on a new scrum master(Kristín Anna Sigurðardóttir) 
 - Vigfús and Bjarni worked on edit profile, its in progress.
 - Aron is working on location Api
+- Tómas worked on matching history 
 - Kristín and Edda worked on fixing the login view and improving documentation
 - New branch called "dev" was made and will be used in the future before merging into main. 
 
