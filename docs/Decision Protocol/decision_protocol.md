@@ -50,4 +50,5 @@
 - Vigfús and Bjarni worked on edit profile, its in progress.
 - Aron is working on location Api
 - Kristín and Edda worked on fixing the login view and improving documentation
+- New branch called "dev" was made and will be used in the future before merging into main. 
 
