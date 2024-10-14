@@ -11,31 +11,19 @@ class EditProfileView:
         
         while True:
             print("\nWhat would you like to edit?")
-            print("1. Username")
-            print("2. Password")
-            print("3. Name")
-            print("4. Age")
-            print("5. Bio")
-            print("6. Interests")
-            print("7. Location")
-            print("8. Exit Editing")
+            print("1. Bio")
+            print("2. Interests")
+            print("3. Location")
+            print("4. Exit Editing")
             choice = input("Enter Your Choice: ")
             
             if choice == "1":
-                self.edit_username()
-            elif choice == "2":
-                self.edit_password()
-            elif choice == "3":
-                self.edit_name()
-            elif choice == "4":
-                self.edit_age()
-            elif choice == "5":
                 self.edit_bio()
-            elif choice == "6":
+            elif choice == "2":
                 self.edit_interests()
-            elif choice == "7":
+            elif choice == "3":
                 self.edit_location()
-            elif choice == "8":
+            elif choice == "4":
                 break
             else:
                 print("Invalid choice, try again.")
@@ -81,3 +69,7 @@ class EditProfileView:
         self.user_logic.edit_location(new_location)
         print("Location updated successfully!")
     
+
+if __name__ == "__main__":
+    edit_profile_view = EditProfileView("aron")
+    edit_profile_view.display_edit_profile()
