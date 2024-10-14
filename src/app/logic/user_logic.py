@@ -82,3 +82,73 @@ class UserLogic:
         self.db.save_users(user_storage)
 
         return True, "User created successfully!"
+    
+    def edit_username(self, new_username):
+        """Edit the username of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["username"] = new_username
+                self.current_user["username"] = new_username
+                self.db.save_users(user_storage)
+                break
+        
+    def edit_password(self, new_password):
+        """Edit the password of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["password"] = new_password
+                self.db.save_users(user_storage)
+                break
+    
+    def edit_name(self, new_name):
+        """Edit the name of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["name"] = new_name
+                self.current_user["name"] = new_name
+                self.db.save_users(user_storage)
+                break
+    
+    def edit_age(self, new_age):
+        """Edit the age of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["age"] = int(new_age)
+                self.current_user["age"] = int(new_age)
+                self.db.save_users(user_storage)
+                break
+    
+    def edit_bio(self, new_bio):
+        """Edit the bio of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["bio"] = new_bio
+                self.current_user["bio"] = new_bio
+                self.db.save_users(user_storage)
+                break
+    
+    def edit_interests(self, new_interests):
+        """Edit the interests of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["interests"] = new_interests
+                self.current_user["interests"] = new_interests
+                self.db.save_users(user_storage)
+                break
+
+    def edit_location(self, new_location):
+        """Edit the location of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["location"] = new_location
+                self.current_user["location"] = new_location
+                self.db.save_users(user_storage)
+                break
+    
