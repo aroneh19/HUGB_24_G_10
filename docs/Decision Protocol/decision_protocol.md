@@ -35,6 +35,21 @@
 - Aron and Tómas did test for the filter and wos working in the filter and "find friends".
 - Vigfús and Bjarni did testing for create profile.
 
-- In class meeting on 1. october...........
-- 
+- In class meeting on 1. october we talked about what we want to do next with the project
+- All of us choosed a case to work on
+- Vigfús and Bjarni worked together in create profile and it works now, and they did tests for that too and are now working in edit profile so we can edit profile users.
+- Logout is nearly done
+- swipe feature nearly done
+- create profile 90% done
+- Aron - filter interest/age, testing, swiping feature
+- Tómas - filter location, byrjaður á að save-a matches
+- Kristín and Edda worked together in logout
+
+#Sprint 4
+- In meeting on 8. october we decided on a new scrum master(Kristín Anna Sigurðardóttir) 
+- Vigfús and Bjarni worked on edit profile, its in progress.
+- Aron is working on location Api
+- Tómas worked on matching history 
+- Kristín and Edda worked on fixing the login view and improving documentation
+- New branch called "dev" was made and will be used in the future before merging into main. 
 

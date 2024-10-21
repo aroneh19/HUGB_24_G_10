@@ -54,7 +54,6 @@ class UserLogic:
         """Create a new user and save to the database."""
         user_storage = self.db.load_users()
 
-        # Perform checks on new user data
         valid_username, msg = self.check_username(username, user_storage)
         if not valid_username:
             return False, msg
@@ -75,7 +74,6 @@ class UserLogic:
         if not valid_bio:
             return False, msg
 
-        # If all checks pass, add the new user to the list
         new_user = {
             "username": username,
             "password": password,
@@ -87,7 +85,6 @@ class UserLogic:
         }
         user_storage.append(new_user)
 
-        # Save updated users back to the JSON file
         self.db.save_users(user_storage)
 
         return True, "User created successfully!"
