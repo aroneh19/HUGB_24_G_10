@@ -3,6 +3,15 @@ from app.models.database import Database
 class UserLogic:
     def __init__(self):
         self.db = Database()
+        self.current_user = None  # Initialize current_user here
+
+    def set_current_user(self, username):
+        """Set the current user by finding them in the user storage."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == username:
+                self.current_user = user
+                break
 
     def check_username(self, username, user_storage):
         """Check if username is available."""
@@ -82,3 +91,50 @@ class UserLogic:
         self.db.save_users(user_storage)
 
         return True, "User created successfully!"
+
+    def set_current_user(self, username):
+        """Set the current user by finding them in the user storage."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == username:
+                self.current_user = user
+                break
+
+
+    def edit_bio(self, new_bio):
+        """Edit the bio of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["bio"] = new_bio
+                self.current_user["bio"] = new_bio
+                self.db.save_users(user_storage)
+                break
+    
+    def edit_interests(self, new_interests):
+        """Edit the interests of the current user."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["interests"] = new_interests
+                self.current_user["interests"] = new_interests
+                self.db.save_users(user_storage)
+                break
+
+    def edit_location(self, new_location):
+        """Edit the location of the current user."""
+        # Validate the new location (you already have a method for this)
+        valid_location, msg = self.check_location(new_location)
+        if not valid_location:
+            return False, msg
+
+        # Load user storage and update location
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == self.current_user.get("username"):
+                user["location"] = new_location
+                self.current_user["location"] = new_location
+                self.db.save_users(user_storage)
+                return True, "Location updated successfully."
+
+        return False, "User not found."
