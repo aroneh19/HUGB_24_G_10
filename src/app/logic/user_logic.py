@@ -41,7 +41,7 @@ class UserLogic:
             return True, None
         return False, "Bio cannot be empty."
 
-    def create_user(self, username, password, name, age, bio, interests, location):
+    def create_user(self, username, password, fullname, age, bio, interests, location, coordinates):
         """Create a new user and save to the database."""
         user_storage = self.db.load_users()
 
@@ -68,11 +68,14 @@ class UserLogic:
         new_user = {
             "username": username,
             "password": password,
-            "name": name,
-            "age": int(age),
-            "bio": bio,
+            "fullname": fullname,
             "interests": interests,
-            "location": location
+            "location": {
+                "city": location,
+                "coordinates": coordinates
+            },
+            "age": int(age),
+            "bio": bio
         }
         user_storage.append(new_user)
 

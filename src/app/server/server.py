@@ -45,12 +45,13 @@ def add_user():
 
     username = data.get('username')
     password = data.get('password')
-    name = data.get('name')
-    bio = data.get('bio', '')
+    fullname = data.get('fullname')
     interests = data.get('interests', [])
     location = data.get('location', '')
+    age = data.get('age', 0)
+    bio = data.get('bio', '')
 
-    new_user = iface.add_user(username, password, name, bio, interests, location)
+    new_user = iface.add_user(username, password, fullname, interests, location, age, bio)
     return jsonify(new_user), 201
 
 if __name__ == '__main__':
