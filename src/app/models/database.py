@@ -4,9 +4,9 @@ class Database:
     def __init__(self):
         self.users_file = "app/data/users.json"
         self.messages_file = "app/data/messages.json"
+        self.user_storage = self.load_users()
 
     def load_users(self):
-        """Load user data from the JSON file."""
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 if file.readable():
