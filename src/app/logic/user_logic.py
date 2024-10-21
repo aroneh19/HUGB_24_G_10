@@ -120,11 +120,18 @@ class UserLogic:
 
     def edit_location(self, new_location):
         """Edit the location of the current user."""
+        # Validate the new location (you already have a method for this)
+        valid_location, msg = self.check_location(new_location)
+        if not valid_location:
+            return False, msg
+
+        # Load user storage and update location
         user_storage = self.db.load_users()
         for user in user_storage:
             if user.get("username") == self.current_user.get("username"):
                 user["location"] = new_location
                 self.current_user["location"] = new_location
                 self.db.save_users(user_storage)
-                break
-    
+                return True, "Location updated successfully."
+
+        return False, "User not found."

@@ -48,8 +48,9 @@ class EditProfileView:
 
     def edit_location(self):
         new_location = input("Enter your new location: ")
-        self.user_logic.edit_location(new_location)
-        print("Location updated successfully!")
+        success, message = self.user_logic.edit_location(new_location)
+        print(message)
+
     
 
 if __name__ == "__main__":
