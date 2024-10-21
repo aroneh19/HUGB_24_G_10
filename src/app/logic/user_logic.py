@@ -3,6 +3,15 @@ from app.models.database import Database
 class UserLogic:
     def __init__(self):
         self.db = Database()
+        self.current_user = None  # Initialize current_user here
+
+    def set_current_user(self, username):
+        """Set the current user by finding them in the user storage."""
+        user_storage = self.db.load_users()
+        for user in user_storage:
+            if user.get("username") == username:
+                self.current_user = user
+                break
 
     def check_username(self, username, user_storage):
         """Check if username is available."""
@@ -82,46 +91,16 @@ class UserLogic:
         self.db.save_users(user_storage)
 
         return True, "User created successfully!"
-    
-    def edit_username(self, new_username):
-        """Edit the username of the current user."""
+
+    def set_current_user(self, username):
+        """Set the current user by finding them in the user storage."""
         user_storage = self.db.load_users()
         for user in user_storage:
-            if user.get("username") == self.current_user.get("username"):
-                user["username"] = new_username
-                self.current_user["username"] = new_username
-                self.db.save_users(user_storage)
+            if user.get("username") == username:
+                self.current_user = user
                 break
-        
-    def edit_password(self, new_password):
-        """Edit the password of the current user."""
-        user_storage = self.db.load_users()
-        for user in user_storage:
-            if user.get("username") == self.current_user.get("username"):
-                user["password"] = new_password
-                self.db.save_users(user_storage)
-                break
-    
-    def edit_name(self, new_name):
-        """Edit the name of the current user."""
-        user_storage = self.db.load_users()
-        for user in user_storage:
-            if user.get("username") == self.current_user.get("username"):
-                user["name"] = new_name
-                self.current_user["name"] = new_name
-                self.db.save_users(user_storage)
-                break
-    
-    def edit_age(self, new_age):
-        """Edit the age of the current user."""
-        user_storage = self.db.load_users()
-        for user in user_storage:
-            if user.get("username") == self.current_user.get("username"):
-                user["age"] = int(new_age)
-                self.current_user["age"] = int(new_age)
-                self.db.save_users(user_storage)
-                break
-    
+
+
     def edit_bio(self, new_bio):
         """Edit the bio of the current user."""
         user_storage = self.db.load_users()
