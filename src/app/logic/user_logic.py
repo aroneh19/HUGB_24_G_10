@@ -4,11 +4,13 @@ class UserLogic:
     def __init__(self):
         self.db = Database()
 
-    def check_username(self, username):
+    def check_username(self, username, user_storage):
         """Check if username is available."""
-        if username in self.user_storage:
-            return False, "Username already taken."
+        for user in user_storage:
+            if user.get("username") == username:
+                return False, "Username already taken."
         return True, None
+
 
     def check_age(self, age):
         """Check if age is a valid integer and within acceptable range."""
@@ -39,12 +41,10 @@ class UserLogic:
             return True, None
         return False, "Bio cannot be empty."
 
-    def create_user(self, username, password, name, age, bio, interests, location):
+    def create_user(self, username, password, fullname, age, bio, interests, location, coordinates):
         """Create a new user and save to the database."""
-        # Load users directly from the database
         user_storage = self.db.load_users()
-        
-        # Perform checks on new user data
+
         valid_username, msg = self.check_username(username, user_storage)
         if not valid_username:
             return False, msg
@@ -65,17 +65,20 @@ class UserLogic:
         if not valid_bio:
             return False, msg
 
-        # If all checks pass, add the user and save to the database
-        user_storage[username] = {
+        new_user = {
+            "username": username,
             "password": password,
-            "name": name,
-            "age": int(age),
-            "bio": bio,
+            "fullname": fullname,
             "interests": interests,
-            "location": location
+            "location": {
+                "city": location,
+                "coordinates": coordinates
+            },
+            "age": int(age),
+            "bio": bio
         }
+        user_storage.append(new_user)
 
-        # Save users back to the JSON file
         self.db.save_users(user_storage)
 
         return True, "User created successfully!"

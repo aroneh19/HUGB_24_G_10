@@ -1,6 +1,11 @@
-from ap
+from app.logic.user_logic import UserLogic
+from app.logic.location_logic import LocationLogic
+
 class CreateProfileView:
     def __init__(self):
+        self.user_logic = UserLogic()
+        self.location_logic = LocationLogic()
+
         self.profile = {
             "username": None,
             "password": None,
@@ -16,18 +21,25 @@ class CreateProfileView:
             print("=== Create a New Profile ===")
             username = input("Enter a username: ")
             password = input("Enter a password: ")
-            name = input("Enter your name: ")
+            fullname = input("Enter your name: ")
             age = input("Enter your age: ")
             bio = input("Write a short bio: ")
             interests = self.get_interests()
             location = input("Enter your location: ")
 
-            if self.user_logic.create_user(username, password, name, age, bio, interests, location):
+            coordinates = self.location_logic.get_location_coordinates(location)
+
+            if "error" in coordinates:
+                print(f"Error getting coordinates: {coordinates['error']}")
+                continue
+
+            success, message = self.user_logic.create_user(username, password, fullname, age, bio, interests, location, coordinates)
+            if success:
                 print(f"Profile for {username} created successfully!")
                 break
             else:
-                print("Failed to create profile. Please try again.")
-                print("Check if the username already exists or other information is invalid.")
+                print(f"Failed to create profile: {message}")
+
     
     def get_interests(self):
         print("Please select your interests from the list below:")
