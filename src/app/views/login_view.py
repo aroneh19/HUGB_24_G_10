@@ -1,11 +1,24 @@
 from app.logic.user_logic import UserLogic
 
-
 class LoginView:
+    """
+    View responsible for handling user login.
+
+    Attributes:
+    user_logic (UserLogic): Handles user-related operations.
+    """
+
     def __init__(self):
+        """
+        Initializes LoginView with an instance of UserLogic.
+        """
         self.user_logic = UserLogic()
 
     def login_menu(self):
+        """
+        Displays the login menu and prompts the user for login credentials.
+        Verifies the user and allows for retry if login fails.
+        """
         from app.views.mainmenu_view import MainMenuView
         while True:
             print("=== Login ===")

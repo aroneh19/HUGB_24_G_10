@@ -38,7 +38,22 @@ class SystemInterface:
         main_menu.main_menu()
 
     def add_user(self, username, password, fullname, interests, location, age, bio):
-        """Add a new user via UserLogic and save to the database."""
+        """
+        Add a new user via UserLogic and save to the database.
+
+        Parameters:
+        username (str): The username of the user.
+        password (str): The password of the user.
+        fullname (str): The full name of the user.
+        interests (list[str]): The interests of the user.
+        location (str): The location of the user.
+        age (int): The age of the user.
+        bio (str): The bio of the user.
+
+        Returns:
+        dict: A dictionary containing a message or an error.
+        int: A status code.
+        """
         # Get coordinates from Geoapify
         coordinates = self.location_logic.get_location_coordinates(location)
 

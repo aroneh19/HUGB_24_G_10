@@ -14,7 +14,16 @@ class UserLogic:
                 break
 
     def check_username(self, username, user_storage):
-        """Check if username is available."""
+        """
+        Check if username is available.
+
+        Parameters:
+        username (str): The username to check.
+        user_storage (list): The list of existing users.
+
+        Returns:
+        tuple: A tuple containing a boolean indicating the availability of the username and a message.
+        """
         for user in user_storage:
             if user.get("username") == username:
                 return False, "Username already taken."
@@ -51,32 +60,22 @@ class UserLogic:
         return False, "Bio cannot be empty."
 
     def create_user(self, username, password, fullname, age, bio, interests, location, coordinates):
-        """Create a new user and save to the database."""
-        is_valid, msg = self.validate_user_data(username, age, bio, interests, location)
-        if not is_valid:
-            return False, msg
+        """
+        Create a new user and save to the database.
 
-        # Create and save the user
-        new_user = {
-            "username": username,
-            "password": password,
-            "fullname": fullname,
-            "interests": interests,
-            "location": {
-                "city": location,
-                "coordinates": coordinates
-            },
-            "age": int(age),
-            "bio": bio
-        }
-        user_storage = self.db.load_users()
-        user_storage.append(new_user)
-        self.db.save_users(user_storage)
+        Parameters:
+        username (str): The username of the user.
+        password (str): The password of the user.
+        fullname (str): The full name of the user.
+        age (int): The age of the user.
+        bio (str): The bio of the user.
+        interests (list): The interests of the user.
+        location (str): The location of the user.
+        coordinates (dict): The coordinates of the user's location.
 
-        return True, "User created successfully!"
-    
-    def validate_user_data(self, username, age, bio, interests, location):
-        """Validate user data."""
+        Returns:
+        tuple: A tuple containing a boolean indicating the success of the operation and a message.
+        """
         user_storage = self.db.load_users()
 
         valid_username, msg = self.check_username(username, user_storage)

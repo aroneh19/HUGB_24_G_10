@@ -1,11 +1,28 @@
 from app.logic.filter_logic import FilterLogic
 
 class SwipingView:
+    """
+    View responsible for displaying and handling swiping functionality.
+
+    Attributes:
+    filter_logic (FilterLogic): Handles filtering logic.
+    filtered_users (list): Stores the list of users filtered based on criteria.
+    """
+
     def __init__(self) -> None:
+        """
+        Initializes SwipingView with an instance of FilterLogic.
+        """
         self.filter_logic = FilterLogic()
         self.filtered_users = []
 
     def start_swiping(self, filters):
+        """
+        Applies filters and starts the swiping process.
+        
+        Args:
+        filters (dict): Filter criteria to apply when swiping.
+        """
         self.filtered_users = self.filter_logic.apply_filters(filters)
         
         if not self.filtered_users:
@@ -28,8 +45,14 @@ class SwipingView:
                 break
             else:
                 print("Invalid choice, try again.")
-    
+
     def display_user(self, user):
+        """
+        Displays the details of a user during the swiping process.
+        
+        Args:
+        user (dict): The user whose details are to be displayed.
+        """
         print(f"Name: {user['fullname']}")
         print(f"Age: {user['age']}")
         print(f"Location: {user['location']}")

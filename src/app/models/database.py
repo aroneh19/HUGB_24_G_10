@@ -7,6 +7,12 @@ class Database:
         self.user_storage = self.load_users()
 
     def load_users(self):
+        """
+        Load users from a JSON file.
+
+        Returns:
+        list: A list of users. If the file is not found or the content is not valid, an empty list is returned.
+        """
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 users = json.load(file)
@@ -23,6 +29,11 @@ class Database:
 
     
     def save_users(self, user_storage):
-        """Save users to JSON file."""
+        """
+        Save users to a JSON file.
+
+        Parameters:
+        user_storage (list): The list of users to save.
+        """
         with open(self.users_file, 'w', encoding='utf-8') as file:
             json.dump(user_storage, file, ensure_ascii=False, indent=4)
