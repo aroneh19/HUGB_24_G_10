@@ -1,8 +1,25 @@
-from app.logic.user_logic import UserLogic
+from app.logic.user_logic import UserLogic 
 from app.logic.location_logic import LocationLogic
 
 class CreateProfileView:
+    """
+    View responsible for creating a new user profile.
+
+    Attributes:
+    user_logic (UserLogic): Handles user-related operations.
+    location_logic (LocationLogic): Handles location-related operations.
+    profile (dict): Stores profile information.
+    """
+    
     def __init__(self):
+        """
+        Initializes CreateProfileView with UserLogic and LocationLogic instances.
+
+        Attributes:
+        user_logic (UserLogic): Manages user-related logic.
+        location_logic (LocationLogic): Manages location-related operations.
+        profile (dict): Stores profile information.
+        """
         self.user_logic = UserLogic()
         self.location_logic = LocationLogic()
 
@@ -17,6 +34,7 @@ class CreateProfileView:
         }
 
     def create_profile_menu(self):
+        """Displays the profile creation menu and handles user input for the profile."""
         while True:
             print("=== Create a New Profile ===")
             username = input("Enter a username: ")
@@ -33,15 +51,22 @@ class CreateProfileView:
                 print(f"Error getting coordinates: {coordinates['error']}")
                 continue
 
-            success, message = self.user_logic.create_user(username, password, fullname, age, bio, interests, location, coordinates)
+            success, message = self.user_logic.create_user(
+                username, password, fullname, age, bio, interests, location, coordinates
+            )
             if success:
                 print(f"Profile for {username} created successfully!")
                 break
             else:
                 print(f"Failed to create profile: {message}")
 
-    
     def get_interests(self):
+        """
+        Prompts the user to select interests from a predefined list.
+
+        Returns:
+        list: A list of selected interests.
+        """
         print("Please select your interests from the list below:")
         interests_list = [
             "Sports", "Books", "Music", "Movies", "Video Games", "Art", 

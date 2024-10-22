@@ -5,7 +5,16 @@ class FilterLogic:
         self.db = Database()
 
     def apply_filters(self, filters):
-        """Apply filters to the loaded user data."""
+        """
+        Apply filters to the loaded user data.
+
+        Parameters:
+        filters (dict): A dictionary containing the filters to be applied. 
+        The filters include interests, age and location.
+
+        Returns:
+        list: A list of users that satisfy the filters.
+        """
         users = self.db.load_users()
         filtered_users = users
 

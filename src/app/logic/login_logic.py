@@ -6,6 +6,16 @@ class LoginLogic:
         self.logged_in_users = {}
 
     def verify_user(self, username, password):
+        """
+        Verify a user's credentials.
+
+        Parameters:
+        username (str): The username of the user.
+        password (str): The password of the user.
+
+        Returns:
+        bool: True if the credentials are correct, False otherwise.
+        """
     # Load users from the database
         user_storage = self.db.load_users()
 
@@ -22,6 +32,15 @@ class LoginLogic:
 
 
     def logout_user(self, username):
+        """
+        Log out a user.
+
+        Parameters:
+        username (str): The username of the user.
+
+        Returns:
+        tuple: A tuple containing a boolean indicating the success of the operation and a message.
+        """
         # Check if the user is logged in
         if username in self.logged_in_users:
             # Remove user from logged-in state

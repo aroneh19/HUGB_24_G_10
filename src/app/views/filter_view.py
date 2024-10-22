@@ -1,5 +1,18 @@
 class FilterView:
+    """
+    View responsible for filtering user profiles based on interests, age, and location.
+
+    Attributes:
+    filter (dict): Stores filter criteria.
+    """
+
     def __init__(self) -> None:
+        """
+        Initializes FilterView with default filter criteria.
+
+        Attributes:
+        filter (dict): Holds interests, age, and location filters.
+        """
         self.filter = {
             "interests": [],
             "age": None,
@@ -7,6 +20,9 @@ class FilterView:
         }
 
     def filter_menu(self):
+        """
+        Displays the filter menu and handles user input for setting filter criteria.
+        """
         while True:
             print("Filter by:")
             print("-----1. Interests")
@@ -25,14 +41,17 @@ class FilterView:
                 self.filter = {
                     "interests": [],
                     "age": [],
-                    "location": None}
+                    "location": None
+                }
             elif choice == "b":
                 break
             else:
                 print("Invalid choice, try again.")
     
     def filter_interests(self):
-        """Get the interests to filter by."""
+        """
+        Sets the interests to filter by.
+        """
         interests_list = [
             "Sports", "Books", "Music", "Movies", "Video Games", "Art", 
             "Cooking", "Fitness", "Travel", "Photography", "Fashion", 
@@ -52,7 +71,9 @@ class FilterView:
             print(self.filter)
 
     def filter_age(self):
-        """Get the minimum and maximum age to filter by."""
+        """
+        Sets the minimum and maximum age to filter by.
+        """
         while True:
             min_age = input("Enter minimum age: ")
             max_age = input("Enter maximum age: ")
@@ -64,7 +85,16 @@ class FilterView:
                 print(result)
     
     def age_validator(self, min_age, max_age):
-        """Validate the minimum and maximum age, ensuring they are integers and within the valid range."""
+        """
+        Validates the minimum and maximum age input.
+
+        Args:
+        min_age (str): Minimum age as input.
+        max_age (str): Maximum age as input.
+
+        Returns:
+        tuple: Boolean indicating validity and either a result or an error message.
+        """
         try:
             min_age = int(min_age)
             max_age = int(max_age)
@@ -79,8 +109,10 @@ class FilterView:
         except ValueError:
             return False, "Invalid input. Ages must be numbers."
 
-
     def filter_location(self):
+        """
+        Sets the location to filter by.
+        """
         locations_list = [
             "Reykjavík", "Kópavogur", "Hafnarfjörður", "Akureyri", "Reykjanesbær", 
             "Garðabær", "Mosfellsbær", "Árborg", "Akranes", "Fjarðabyggð", 
@@ -103,4 +135,3 @@ class FilterView:
                 break
             else:
                 print("Invalid choice, try again.")
-
