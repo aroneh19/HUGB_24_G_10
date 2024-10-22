@@ -45,9 +45,10 @@ class TestCreateProfile(unittest.TestCase):
         bio = "I enjoy hiking and reading."
         interests = ["hiking", "reading"]
         location = "Los Angeles"
+        coordinates = {"latitude": 34.0522, "longitude": -118.2437}  # Example coordinates
 
         # Call the user logic create_user function
-        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location, coordinates)
 
         # Assert successful profile creation
         self.assertTrue(success)
@@ -63,8 +64,9 @@ class TestCreateProfile(unittest.TestCase):
         bio = "I enjoy hiking and reading."
         interests = ["hiking", "reading"]
         location = "Los Angeles"
+        coordinates = {"latitude": 34.0522, "longitude": -118.2437}  # Example coordinates
 
-        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location, coordinates)
 
         # Assert that the creation fails due to taken username
         self.assertFalse(success)
@@ -80,8 +82,9 @@ class TestCreateProfile(unittest.TestCase):
         bio = "I enjoy hiking and reading."
         interests = ["hiking", "reading"]
         location = "Los Angeles"
+        coordinates = {"latitude": 34.0522, "longitude": -118.2437}  # Example coordinates
 
-        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location, coordinates)
 
         # Assert failure due to invalid age
         self.assertFalse(success)
@@ -97,8 +100,9 @@ class TestCreateProfile(unittest.TestCase):
         bio = ""  # Empty bio
         interests = ["hiking", "reading"]
         location = "Los Angeles"
+        coordinates = {"latitude": 34.0522, "longitude": -118.2437}  # Example coordinates
 
-        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location, coordinates)
 
         # Assert failure due to empty bio
         self.assertFalse(success)
@@ -114,8 +118,9 @@ class TestCreateProfile(unittest.TestCase):
         bio = "I enjoy hiking and reading."
         interests = []  # No interests
         location = "Los Angeles"
+        coordinates = {"latitude": 34.0522, "longitude": -118.2437}  # Example coordinates
 
-        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location, coordinates)
 
         # Assert failure due to empty interests
         self.assertFalse(success)
@@ -131,8 +136,9 @@ class TestCreateProfile(unittest.TestCase):
         bio = "I enjoy hiking and reading."
         interests = ["hiking", "reading"]
         location = ""  # Empty location
+        coordinates = {"latitude": 34.0522, "longitude": -118.2437}  # Example coordinates
 
-        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location)
+        success, message = self.user_logic.create_user(username, password, name, age, bio, interests, location, coordinates)
 
         # Assert failure due to empty location
         self.assertFalse(success)
