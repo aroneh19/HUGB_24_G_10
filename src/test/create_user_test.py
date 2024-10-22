@@ -17,7 +17,13 @@ class TestCreateProfile(unittest.TestCase):
                 "age": 25,
                 "bio": "I love coding.",
                 "interests": ["coding", "gaming"],
-                "location": "New York"
+                "location": {
+                    "city": "Reykjavík",
+                    "coordinates": {
+                        "longitude": -21.9422367,
+                        "latitude": 64.145981
+                    }
+                }
             }
         ]
 

@@ -1,5 +1,6 @@
 from app.logic.user_logic import UserLogic
 from app.logic.location_logic import LocationLogic
+from app.utils.utils import clearTerminal
 
 class CreateProfileView:
     def __init__(self):
@@ -25,7 +26,7 @@ class CreateProfileView:
             age = input("Enter your age: ")
             bio = input("Write a short bio: ")
             interests = self.get_interests()
-            location = input("Enter your location: ")
+            location = self.get_location()
 
             coordinates = self.location_logic.get_location_coordinates(location)
 
@@ -52,12 +53,15 @@ class CreateProfileView:
         selected_interests = []
 
         while True:
-            for i, interest in enumerate(interests_list, 1):
-                print(f"{i}. {interest}")
-            print("Type 'b' to finish selecting interests.")
+            clearTerminal()
+            half_length = len(interests_list) // 2 + len(interests_list) % 2
+            for i in range(half_length):
+                left_item = f"{i+1}. {interests_list[i]}"
+                right_item = f"{i+1+half_length}. {interests_list[i+half_length]}" if i+half_length < len(interests_list) else ""
+                print(f"{left_item:<20} {right_item}")
 
-            choice = input("Enter the number of your interest: ")
-            if choice == "b":
+            choice = input("\nEnter the number of your interest or 'd' to finish: ")
+            if choice == "d":
                 if selected_interests:
                     break
                 else:
@@ -74,8 +78,30 @@ class CreateProfileView:
                     print("Invalid input. Please enter a number.")
 
         return selected_interests
+    
+    def get_location(self):
+        locations_list = [
+            "Reykjavík", "Kópavogur", "Akureyri", "Mosfellsbær", "Hafnarfjörður",
+            "Selfoss", "Akranes", "Vestmannaeyjar"
+        ]
 
-# To use the UI:
+        while True:
+            clearTerminal()
+            for i, location in enumerate(locations_list, 1):
+                print(f"{i}. {location}")
+
+            choice = input("\nEnter the number of your location: ")
+            try:
+                index = int(choice) - 1
+                if 0 <= index < len(locations_list):
+                    selected_location = locations_list[index]
+                    print(f"Selected location: {selected_location}")
+                    return selected_location
+                else:
+                    print("Invalid choice, please try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+
 if __name__ == "__main__":
     create_profile_view = CreateProfileView()
     create_profile_view.create_profile_menu()

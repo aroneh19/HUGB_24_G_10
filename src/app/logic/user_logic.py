@@ -52,6 +52,31 @@ class UserLogic:
 
     def create_user(self, username, password, fullname, age, bio, interests, location, coordinates):
         """Create a new user and save to the database."""
+        is_valid, msg = self.validate_user_data(username, age, bio, interests, location)
+        if not is_valid:
+            return False, msg
+
+        # Create and save the user
+        new_user = {
+            "username": username,
+            "password": password,
+            "fullname": fullname,
+            "interests": interests,
+            "location": {
+                "city": location,
+                "coordinates": coordinates
+            },
+            "age": int(age),
+            "bio": bio
+        }
+        user_storage = self.db.load_users()
+        user_storage.append(new_user)
+        self.db.save_users(user_storage)
+
+        return True, "User created successfully!"
+    
+    def validate_user_data(self, username, age, bio, interests, location):
+        """Validate user data."""
         user_storage = self.db.load_users()
 
         valid_username, msg = self.check_username(username, user_storage)
@@ -74,23 +99,7 @@ class UserLogic:
         if not valid_bio:
             return False, msg
 
-        new_user = {
-            "username": username,
-            "password": password,
-            "fullname": fullname,
-            "interests": interests,
-            "location": {
-                "city": location,
-                "coordinates": coordinates
-            },
-            "age": int(age),
-            "bio": bio
-        }
-        user_storage.append(new_user)
-
-        self.db.save_users(user_storage)
-
-        return True, "User created successfully!"
+        return True, None
 
     def set_current_user(self, username):
         """Set the current user by finding them in the user storage."""
@@ -99,7 +108,6 @@ class UserLogic:
             if user.get("username") == username:
                 self.current_user = user
                 break
-
 
     def edit_bio(self, new_bio):
         """Edit the bio of the current user."""

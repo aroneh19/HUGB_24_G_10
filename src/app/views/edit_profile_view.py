@@ -47,11 +47,69 @@ class EditProfileView:
         print("Interests updated successfully!")
 
     def edit_location(self):
-        new_location = input("Enter your new location: ")
-        success, message = self.user_logic.edit_location(new_location)
-        print(message)
+        new_location = self.get_location()
+        coordinates = self.location_logic.get_location_coordinates(new_location)
 
+        if "error" in coordinates:
+            print(f"Error updating location: {coordinates['error']}")
+        else:
+            success, message = self.user_logic.edit_location(new_location, coordinates)
+            print(message)
+
+    def get_interests(self):
+        interests_list = [
+            "Sports", "Books", "Music", "Movies", "Video Games", "Art", 
+            "Cooking", "Fitness", "Travel", "Photography", "Fashion", 
+            "Technology", "Science", "Gardening", "Hiking", "Yoga", 
+            "Dancing", "Writing", "Meditation", "Gaming"
+        ]
+        selected_interests = []
+
+        while True:
+            for i, interest in enumerate(interests_list, 1):
+                print(f"{i}. {interest}")
+            print("Type 'b' to finish selecting interests.")
+
+            choice = input("Enter the number of your interest: ")
+            if choice == "d":
+                if selected_interests:
+                    break
+                else:
+                    print("You must select at least one interest.")
+            else:
+                try:
+                    index = int(choice) - 1
+                    if 0 <= index < len(interests_list):
+                        selected_interests.append(interests_list[index])
+                        print(f"Selected interests: {selected_interests}")
+                    else:
+                        print("Invalid choice, please try again.")
+                except ValueError:
+                    print("Invalid input. Please enter a number.")
+        
+        return selected_interests
     
+    def get_location(self):
+        locations_list = [
+            "Reykjavík", "Kópavogur", "Akureyri", "Mosfellsbær", "Hafnarfjörður",
+            "Selfoss", "Akranes", "Vestmannaeyjar"
+        ]
+
+        while True:
+            for i, location in enumerate(locations_list, 1):
+                print(f"{i}. {location}")
+
+            choice = input("Enter the number of your location: ")
+            try:
+                index = int(choice) - 1
+                if 0 <= index < len(locations_list):
+                    selected_location = locations_list[index]
+                    print(f"Selected location: {selected_location}")
+                    return selected_location
+                else:
+                    print("Invalid choice, please try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
 
 if __name__ == "__main__":
     edit_profile_view = EditProfileView("aron")  # Ensure 'aron' exists in the JSON file

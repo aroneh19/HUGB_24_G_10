@@ -45,7 +45,7 @@ class FilterView:
                 print(f"{i}. {j}")
 
             choice = input("Enter choice: ")
-            if choice == "b":
+            if choice == "d":
                 break
             self.filter["interests"].append(interests_list[int(choice) - 1])
 
