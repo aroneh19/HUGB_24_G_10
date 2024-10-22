@@ -49,7 +49,8 @@
 - In meeting on 8. october we decided on a new scrum master(Kristín Anna Sigurðardóttir) 
 - Vigfús and Bjarni finished edit profile.
 - Aron finished location Api and testing.
-- Tómas worked on matching history 
-- Kristín and Edda worked on fixing the login view and improving documentation, and finally made login test work via postman
-- Tómas made a new branch called "dev" that will be used in the future before merging into main.(from the code reviews this was what we decided changing)
+- Aron finished create profile.
+- Tómas worked on matching history. 
+- Kristín and Edda worked on fixing the login view and improving documentation, and finally made login test work via postman.
+- Tómas made a new branch called "dev" that will be used in the future before merging into main(from the code reviews this was what we decided changing).
 
