@@ -12,7 +12,7 @@ class CreateProfileView:
     profile (dict): Stores profile information.
     """
     
-    def __init__(self):
+    def __init__(self, user_logic):
         """
         Initializes CreateProfileView with UserLogic and LocationLogic instances.
 
@@ -21,7 +21,7 @@ class CreateProfileView:
         location_logic (LocationLogic): Manages location-related operations.
         profile (dict): Stores profile information.
         """
-        self.user_logic = UserLogic()
+        self.user_logic = user_logic
         self.location_logic = LocationLogic()
 
         self.profile = {
@@ -37,6 +37,7 @@ class CreateProfileView:
     def create_profile_menu(self):
         """Displays the profile creation menu and handles user input for the profile."""
         while True:
+            clearTerminal()
             print("=== Create a New Profile ===")
             username = input("Enter a username: ")
             password = input("Enter a password: ")

@@ -16,7 +16,6 @@ class Database:
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 users = json.load(file)
-                print(f"Loaded users: {users}")  # Print loaded users to verify it's working
                 return users
         except FileNotFoundError:
             print(f"Error: {self.users_file} not found.")

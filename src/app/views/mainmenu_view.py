@@ -2,6 +2,7 @@ import sys
 from app.views.filter_view import FilterView
 from app.views.swiping_view import SwipingView
 from app.views.edit_profile_view import EditProfileView
+from app.utils.utils import clearTerminal
 
 class MainMenuView:
     """
@@ -13,7 +14,7 @@ class MainMenuView:
     swiping (SwipingView): Handles swiping functionality.
     """
 
-    def __init__(self, username) -> None:
+    def __init__(self, user_logic) -> None:
         """
         Initializes MainMenuView with the username and instances of FilterView and SwipingView.
 
@@ -22,14 +23,15 @@ class MainMenuView:
         filter (FilterView): Manages filtering logic.
         swiping (SwipingView): Manages swiping logic.
         """
-        self.username = username
+        self.user_logic = user_logic
         self.filter = FilterView()
         self.swiping = SwipingView()
     
-    def show_menu(self):
+    def display_menu(self):
         """
         Displays the main menu options.
         """
+        clearTerminal()
         print("1. Start Swiping")
         print("2. Filter")
         print("3. Messages")
@@ -41,7 +43,7 @@ class MainMenuView:
         Handles user input for navigating the main menu.
         """
         while True:
-            self.show_menu()
+            self.display_menu()
             choice = input("Enter choice: ")
             if choice == "1":
                 self.swiping.start_swiping(self.filter.filter)
@@ -52,11 +54,7 @@ class MainMenuView:
             elif choice == "4":
                 print("Profile")
             elif choice == "5":
-                edit_view = EditProfileView(self.username)
+                edit_view = EditProfileView(self.user_logic.current_user)
                 edit_view.display_edit_profile()
             else:
                 print("Invalid choice, try again.")
-
-if __name__ == "__main__":
-    main_menu = MainMenuView("username") 
-    main_menu.main_menu()

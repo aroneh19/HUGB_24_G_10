@@ -4,6 +4,28 @@ class UserLogic:
     def __init__(self):
         self.db = Database()
         self.current_user = None  # Initialize current_user here
+    
+    def verify_user(self, username, password):
+        """
+        Verify if the provided username and password match a user in the database.
+
+        Parameters:
+        username (str): The username to verify.
+        password (str): The password to verify.
+
+        Returns:
+        tuple: A tuple containing a boolean indicating success or failure and a message.
+        """
+        user_storage = self.db.load_users()  # Load users from the database
+        for user in user_storage:
+            if user.get("username") == username:
+                if user.get("password") == password:  # Check the password
+                    self.set_current_user(username)  # Set the current user
+                    return True, user
+                else:
+                    return False, "Invalid password."
+        return False, "Username not found."
+
 
     def set_current_user(self, username):
         """Set the current user by finding them in the user storage."""
