@@ -66,3 +66,13 @@ class SystemInterface:
             return {"message": msg}, 201
         else:
             return {"error": msg}, 400
+
+    def get_users(self):
+        """
+        Get all users from the database.
+
+        Returns:
+        list: A list of users.
+        """
+        users = self.db.load_users()
+        return users
