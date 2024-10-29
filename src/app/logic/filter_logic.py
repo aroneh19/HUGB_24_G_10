@@ -23,7 +23,3 @@ class FilterLogic:
             filtered_users = [user for user in filtered_users if user['location'] == filters['location']]
 
         return filtered_users
-    
-    def load_filters(self):
-        """Load filters from the database."""
-        pass

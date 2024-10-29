@@ -6,9 +6,9 @@ class TestUser(unittest.TestCase):
         self.user_logic = UserLogic()
 
     def test_check_username(self):
-        self.assertTrue(self.user_logic.check_username("new_user"))
+        self.assertTrue(self.user_logic.check_username("new_user", self.user_logic.user_storage)[0])
         self.user_logic.user_storage["existing_user"] = {}
-        self.assertFalse(self.user_logic.check_username("existing_user"))
+        self.assertFalse(self.user_logic.check_username("existing_user", self.user_logic.user_storage)[0])
 
     def test_check_age(self):
         self.assertTrue(self.user_logic.check_age(25)[0])
@@ -43,6 +43,13 @@ class TestUser(unittest.TestCase):
         )
         self.assertFalse(result)
         self.assertNotIn("jane_doe", self.user_logic.user_storage)
+    
+    def test_create_user_with_existing_username(self):
+        self.user_logic.create_user("john_doe", "password", "John Doe", 30, "I like soccer", ["soccer"], "Reykjavik")
+        result, msg = self.user_logic.create_user("john_doe", "newpassword", "Johnathan Doe", 25, "I love tennis", ["tennis"], "Reykjavik")
+        self.assertFalse(result)
+        self.assertEqual(msg, "Username already taken.")
+
 
 if __name__ == "__main__":
     unittest.main()
