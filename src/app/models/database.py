@@ -24,9 +24,6 @@ class Database:
             print(f"Error loading users.json: {e}")  # Print any other errors
             return {}
 
-
-
-    
     def save_users(self, user_storage):
         """
         Save users to a JSON file.

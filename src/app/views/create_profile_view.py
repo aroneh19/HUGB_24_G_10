@@ -58,7 +58,7 @@ class CreateProfileView:
             )
             if success:
                 print(f"Profile for {username} created successfully!")
-                break
+                return True
             else:
                 print(f"Failed to create profile: {message}")
 
@@ -121,13 +121,8 @@ class CreateProfileView:
                 index = int(choice) - 1
                 if 0 <= index < len(locations_list):
                     selected_location = locations_list[index]
-                    print(f"Selected location: {selected_location}")
                     return selected_location
                 else:
                     print("Invalid choice, please try again.")
             except ValueError:
                 print("Invalid input. Please enter a number.")
-
-if __name__ == "__main__":
-    create_profile_view = CreateProfileView()
-    create_profile_view.create_profile_menu()

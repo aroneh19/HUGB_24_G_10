@@ -1,4 +1,6 @@
 from app.models.database import Database
+from app.models.user_model import User
+
 
 class UserLogic:
     def __init__(self):
@@ -81,7 +83,7 @@ class UserLogic:
             return True, None
         return False, "Bio cannot be empty."
 
-    def create_user(self, username, password, fullname, age, bio, interests, location, coordinates):
+    def create_user(self, username, password, fullname, age, bio, interests, city, coordinates):
         """
         Create a new user and save to the database.
 
@@ -112,13 +114,19 @@ class UserLogic:
         if not valid_interests:
             return False, msg
 
-        valid_location, msg = self.check_location(location)
+        valid_location, msg = self.check_location(city)
         if not valid_location:
             return False, msg
 
         valid_bio, msg = self.check_bio(bio)
         if not valid_bio:
             return False, msg
+        
+        location = {"city": city, "coordinates": coordinates}
+
+        new_user = User(username, password, fullname, bio, interests, location)
+        user_storage.append(new_user.to_dict())
+        self.db.save_users(user_storage)
 
         return True, None
 

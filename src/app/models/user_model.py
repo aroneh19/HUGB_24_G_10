@@ -2,7 +2,7 @@ import json
 
 class User:
     def __init__(self, username: str, password: str, fullname: str, 
-                 bio: str, interests: list[str], location: str):
+                 bio: str, interests: list[str], location: dict):
         
         self.username = username
         self.password = password
@@ -12,14 +12,14 @@ class User:
         self.interests = interests
         self.location = location
     
-    def to_json(self):
+    def to_dict(self):
         """
-        Convert the user to a json string.
+        Convert the user object to a dictionary.
 
         Returns:
-        str: A json string representing the user.
+        dict: A dictionary representing the user.
         """
-        return json.dumps(self.__dict__)
+        return self.__dict__
 
 def load_user(path="data/users.json"):
     """
