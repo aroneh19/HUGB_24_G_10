@@ -54,3 +54,12 @@
 - Kristín and Edda worked on fixing the login view and improving documentation, and finally made login test work via postman.
 - Tómas made a new branch called "dev" that will be used in the future before merging into main(from the code reviews this was what we decided changing).
 
+#Sprint 5
+- In meeting on 22. october we decided on a new scrum master (Edda Eik Vignisdóttir)
+- Aron will be working on CID for Gitlab and make the person that is logged in, stay logged in on different servers.
+- Tómas will be working on match history
+- Bjarni and Vigfús will be working on messaging feature
+- Edda and Kristín will be working on the unmatching feature
+- Edda and Kristín finished login with help from Aron
+- Every team member will also fill out the team peer review
+
