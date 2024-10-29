@@ -6,6 +6,7 @@ from app.logic.location_logic import LocationLogic
 from app.views.mainmenu_view import MainMenuView
 from app.views.login_view import LoginView
 from app.logic.login_logic import LoginLogic
+# import json
 
 class SystemInterface:
 
@@ -76,3 +77,25 @@ class SystemInterface:
         """
         users = self.db.load_users()
         return users
+
+    # def add_match(self, current_user, liked_user):
+    #     """
+    #     Record a match when the current user swipes right on another user.
+
+    #     Parameters:
+    #     current_user (str): The username of the user liking another profile.
+    #     liked_user (str): The username of the user who was liked.
+    #     """
+    #     # Load existing matches
+    #     try:
+    #         with open("matches.json", "r") as file:
+    #             matches = json.load(file)
+    #     except FileNotFoundError:
+    #         matches = []
+
+    #     # Add the match entry
+    #     matches.append({"user": current_user, "liked": liked_user})
+
+    #     # Save the updated matches
+    #     with open("matches.json", "w") as file:
+    #         json.dump(matches, file)

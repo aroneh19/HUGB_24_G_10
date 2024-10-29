@@ -58,3 +58,10 @@ class MainMenuView:
                 edit_view.display_edit_profile()
             else:
                 print("Invalid choice, try again.")
+
+from app.logic.user_logic import UserLogic
+
+if __name__ == "__main__":
+    user_logic_instance = UserLogic()  # Initialize the required logic instance
+    main_menu = MainMenuView(user_logic_instance)
+    main_menu.main_menu()  # Adjust if a different method should be called
