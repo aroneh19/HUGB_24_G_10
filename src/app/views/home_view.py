@@ -12,7 +12,7 @@ class HomeView:
         self.user_logic = UserLogic()
         self.login_view = LoginView(self.user_logic)
         self.create_profile_view = CreateProfileView(self.user_logic)
-        self.main_menu_view = MainMenuView(self.user_logic)
+        self.main_menu_view = None
 
     def display_menu(self):
         """
@@ -36,8 +36,11 @@ class HomeView:
                 print("Invalid choice. Please select 1, 2, or 3.")
                 continue
 
+            # Transition to MainMenuView only if login or user creation was successful
             if user:
-                self.main_menu_view.main_menu()            
+                # Initialize MainMenuView with the current user after login/creation
+                self.main_menu_view = MainMenuView(self.user_logic, user)
+                self.main_menu_view.main_menu()  # Start main menu for logged-in user       
 
 if __name__ == "__main__":
     home_view = HomeView()

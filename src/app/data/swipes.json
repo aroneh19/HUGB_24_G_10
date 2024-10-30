@@ -1,0 +1,24 @@
+{
+    "aron": {
+        "liked": [
+            "tomas",
+            "janedoe"
+        ],
+        "passed": [
+            "james"
+        ]
+    },
+    "tomas": {
+        "liked": [
+            "aron"
+        ]
+    },
+    "janedoe": {
+        "liked": [
+            "aron"
+        ],
+        "passed": [
+            "tomas"
+        ]
+    }
+}
