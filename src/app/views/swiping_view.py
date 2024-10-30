@@ -9,11 +9,13 @@ class SwipingView:
     filtered_users (list): Stores the list of users filtered based on criteria.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, system_interface, current_user) -> None:
         """
         Initializes SwipingView with an instance of FilterLogic.
         """
         self.filter_logic = FilterLogic()
+        self.system_interface = system_interface 
+        self.current_user = current_user
         self.filtered_users = []
 
     def start_swiping(self, filters):
@@ -36,9 +38,11 @@ class SwipingView:
             choice = input("Swipe right (r) to like or left (l) to pass (b to go back): ")
 
             if choice == "r":
+                self.system_interface.log_swipe_action(self.current_user, user["username"], "like")
                 print(f"You liked {user['fullname']}!")
                 current_user_index += 1
             elif choice == "l":
+                self.system_interface.log_swipe_action(self.current_user, user["username"], "pass")
                 print(f"You passed on {user['fullname']}.")
                 current_user_index += 1
             elif choice == "b":
