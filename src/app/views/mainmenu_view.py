@@ -2,6 +2,7 @@ import sys
 from app.views.filter_view import FilterView
 from app.views.swiping_view import SwipingView
 from app.views.edit_profile_view import EditProfileView
+from app.server.interface import SystemInterface
 from app.utils.utils import clearTerminal
 
 class MainMenuView:
@@ -14,7 +15,7 @@ class MainMenuView:
     swiping (SwipingView): Handles swiping functionality.
     """
 
-    def __init__(self, user_logic) -> None:
+    def __init__(self, user_logic, current_user) -> None:
         """
         Initializes MainMenuView with the username and instances of FilterView and SwipingView.
 
@@ -24,8 +25,10 @@ class MainMenuView:
         swiping (SwipingView): Manages swiping logic.
         """
         self.user_logic = user_logic
+        self.current_user = current_user
+        self.iface = SystemInterface()
+        self.swiping = SwipingView(self.iface, self.current_user)
         self.filter = FilterView()
-        self.swiping = SwipingView()
     
     def display_menu(self):
         """
@@ -60,8 +63,3 @@ class MainMenuView:
                 print("Invalid choice, try again.")
 
 from app.logic.user_logic import UserLogic
-
-if __name__ == "__main__":
-    user_logic_instance = UserLogic()  # Initialize the required logic instance
-    main_menu = MainMenuView(user_logic_instance)
-    main_menu.main_menu()  # Adjust if a different method should be called
