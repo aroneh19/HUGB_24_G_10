@@ -79,19 +79,30 @@ class SystemInterface:
     def log_swipe_action(self, current_user, target_user, action):
         """
         Log a swipe action ("like" or "pass") and check for a mutual match if the action is a "like".
-        
+
         Parameters:
         current_user (str): The username of the user swiping.
         target_user (str): The username of the user being swiped on.
         action (str): "like" or "pass" action.
+
+        Returns:
+        bool: True if a mutual match is created, False otherwise.
         """
+        # Record the swipe action in the swipes.json file
         self.db.add_swipe(current_user, target_user, action)
         
-        # Check if mutual "like" exists to add a match
+        # Only check for a mutual match if the action is a "like"
         if action == "like":
-            swipes = self.db.load_data(self.db.swipes_file)  # Load current swipes
+            # Load the swipes data to see if target_user has already liked current_user
+            swipes = self.db.load_data(self.db.swipes_file)
+            
+            # Check if target_user has liked current_user
             if target_user in swipes and current_user in swipes[target_user]["liked"]:
+                # If mutual like, record the match
                 self.db.add_match(current_user, target_user)
+                return True  # Indicate a match was found
+        
+        return False  # No match found
 
     # def unmatch(self, user1, user2):
     #     """Remove a match between two users."""

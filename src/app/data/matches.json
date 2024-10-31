@@ -1,10 +1,38 @@
 [
     {
-        "user1": "aron",
-        "user2": "tomas"
+        "user1": "steinunn",
+        "user2": "vigdis"
     },
     {
-        "user1": "janedoe",
-        "user2": "aron"
+        "user1": "sara",
+        "user2": "johann"
+    },
+    {
+        "user1": "harpa",
+        "user2": "anna"
+    },
+    {
+        "user1": "hrafn",
+        "user2": "johann"
+    },
+    {
+        "user1": "hrafn",
+        "user2": "karl"
+    },
+    {
+        "user1": "runar",
+        "user2": "hrafn"
+    },
+    {
+        "user1": "helga",
+        "user2": "runar"
+    },
+    {
+        "user1": "maria",
+        "user2": "harpa"
+    },
+    {
+        "user1": "maria",
+        "user2": "freyr"
     }
 ]
