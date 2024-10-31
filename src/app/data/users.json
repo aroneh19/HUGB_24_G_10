@@ -1,452 +1,528 @@
 [
-  {
-    "username": "anna",
-    "password": "anna123",
-    "fullname": "Anna Jónsdóttir",
-    "interests": ["Hiking"],
-    "location": {
-      "city": "Reykjavík",
-      "coordinates": {
-        "longitude": -21.9422367,
-        "latitude": 64.145981
-      }
+    {
+        "username": "anna",
+        "password": "anna123",
+        "fullname": "Anna Jónsdóttir",
+        "interests": [
+            "Hiking"
+        ],
+        "location": {
+            "city": "Reykjavík",
+            "coordinates": {
+                "longitude": -21.9422367,
+                "latitude": 64.145981
+            }
+        },
+        "age": 24,
+        "bio": "Nature enthusiast"
     },
-    "age": 24,
-    "bio": "Nature enthusiast"
-  },
-  {
-    "username": "bjorn",
-    "password": "bjorn123",
-    "fullname": "Björn Pétursson",
-    "interests": ["Fishing"],
-    "location": {
-      "city": "Akureyri",
-      "coordinates": {
-        "longitude": -18.1262,
-        "latitude": 65.6885
-      }
+    {
+        "username": "bjorn",
+        "password": "bjorn123",
+        "fullname": "Björn Pétursson",
+        "interests": [
+            "Fishing"
+        ],
+        "location": {
+            "city": "Akureyri",
+            "coordinates": {
+                "longitude": -18.1262,
+                "latitude": 65.6885
+            }
+        },
+        "age": 30,
+        "bio": "Loves the ocean"
     },
-    "age": 30,
-    "bio": "Loves the ocean"
-  },
-  {
-    "username": "kristin",
-    "password": "kristin123",
-    "fullname": "Kristín Elíasdóttir",
-    "interests": ["Photography"],
-    "location": {
-      "city": "Selfoss",
-      "coordinates": {
-        "longitude": -21.0003,
-        "latitude": 63.9339
-      }
+    {
+        "username": "kristin",
+        "password": "kristin123",
+        "fullname": "Kristín Elíasdóttir",
+        "interests": [
+            "Photography"
+        ],
+        "location": {
+            "city": "Selfoss",
+            "coordinates": {
+                "longitude": -21.0003,
+                "latitude": 63.9339
+            }
+        },
+        "age": 27,
+        "bio": "Capturing the beauty of Iceland"
     },
-    "age": 27,
-    "bio": "Capturing the beauty of Iceland"
-  },
-  {
-    "username": "johann",
-    "password": "johann123",
-    "fullname": "Jóhann Sigurðsson",
-    "interests": ["Reading"],
-    "location": {
-      "city": "Hafnarfjörður",
-      "coordinates": {
-        "longitude": -21.9584,
-        "latitude": 64.0678
-      }
+    {
+        "username": "johann",
+        "password": "johann123",
+        "fullname": "Jóhann Sigurðsson",
+        "interests": [
+            "Reading"
+        ],
+        "location": {
+            "city": "Hafnarfjörður",
+            "coordinates": {
+                "longitude": -21.9584,
+                "latitude": 64.0678
+            }
+        },
+        "age": 32,
+        "bio": "Avid reader and explorer of new ideas"
     },
-    "age": 32,
-    "bio": "Avid reader and explorer of new ideas"
-  },
-  {
-    "username": "helga",
-    "password": "helga123",
-    "fullname": "Helga Ragnarsdóttir",
-    "interests": ["Cooking"],
-    "location": {
-      "city": "Hafnarfjörður",
-      "coordinates": {
-        "longitude": -21.9584,
-        "latitude": 64.0678
-      }
+    {
+        "username": "helga",
+        "password": "helga123",
+        "fullname": "Helga Ragnarsdóttir",
+        "interests": [
+            "Cooking"
+        ],
+        "location": {
+            "city": "Hafnarfjörður",
+            "coordinates": {
+                "longitude": -21.9584,
+                "latitude": 64.0678
+            }
+        },
+        "age": 28,
+        "bio": "Passionate home cook"
     },
-    "age": 28,
-    "bio": "Passionate home cook"
-  },
-  {
-    "username": "steinunn",
-    "password": "steinunn123",
-    "fullname": "Steinunn Guðmundsdóttir",
-    "interests": ["Yoga"],
-    "location": {
-      "city": "Vestmannaeyjar",
-      "coordinates": {
-        "longitude": -20.2736,
-        "latitude": 63.4426
-      }
+    {
+        "username": "steinunn",
+        "password": "steinunn123",
+        "fullname": "Steinunn Guðmundsdóttir",
+        "interests": [
+            "Yoga"
+        ],
+        "location": {
+            "city": "Vestmannaeyjar",
+            "coordinates": {
+                "longitude": -20.2736,
+                "latitude": 63.4426
+            }
+        },
+        "age": 26,
+        "bio": "Yoga enthusiast and lover of mindfulness"
     },
-    "age": 26,
-    "bio": "Yoga enthusiast and lover of mindfulness"
-  },
-  {
-    "username": "gunnar",
-    "password": "gunnar123",
-    "fullname": "Gunnar Ólafsson",
-    "interests": ["Gaming"],
-    "location": {
-      "city": "Kópavogur",
-      "coordinates": {
-        "longitude": -21.9048106,
-        "latitude": 64.1113504
-      }
+    {
+        "username": "gunnar",
+        "password": "gunnar123",
+        "fullname": "Gunnar Ólafsson",
+        "interests": [
+            "Gaming"
+        ],
+        "location": {
+            "city": "Kópavogur",
+            "coordinates": {
+                "longitude": -21.9048106,
+                "latitude": 64.1113504
+            }
+        },
+        "age": 22,
+        "bio": "Competitive gamer"
     },
-    "age": 22,
-    "bio": "Competitive gamer"
-  },
-  {
-    "username": "maria",
-    "password": "maria123",
-    "fullname": "María Eiríksdóttir",
-    "interests": ["Dancing"],
-    "location": {
-      "city": "Kópavogur",
-      "coordinates": {
-        "longitude": -21.9048106,
-        "latitude": 64.1113504
-      }
+    {
+        "username": "maria",
+        "password": "maria123",
+        "fullname": "María Eiríksdóttir",
+        "interests": [
+            "Dancing"
+        ],
+        "location": {
+            "city": "Kópavogur",
+            "coordinates": {
+                "longitude": -21.9048106,
+                "latitude": 64.1113504
+            }
+        },
+        "age": 25,
+        "bio": "Dance teacher and performer"
     },
-    "age": 25,
-    "bio": "Dance teacher and performer"
-  },
-  {
-    "username": "snorri",
-    "password": "snorri123",
-    "fullname": "Snorri Finnbogason",
-    "interests": ["Running"],
-    "location": {
-      "city": "Kópavogur",
-      "coordinates": {
-        "longitude": -21.9048106,
-        "latitude": 64.1113504
-      }
+    {
+        "username": "snorri",
+        "password": "snorri123",
+        "fullname": "Snorri Finnbogason",
+        "interests": [
+            "Running"
+        ],
+        "location": {
+            "city": "Kópavogur",
+            "coordinates": {
+                "longitude": -21.9048106,
+                "latitude": 64.1113504
+            }
+        },
+        "age": 29,
+        "bio": "Marathon runner"
     },
-    "age": 29,
-    "bio": "Marathon runner"
-  },
-  {
-    "username": "lilja",
-    "password": "lilja123",
-    "fullname": "Lilja Haraldsdóttir",
-    "interests": ["Swimming"],
-    "location": {
-      "city": "Grindavík",
-      "coordinates": {
-        "longitude": -22.4304,
-        "latitude": 63.8424
-      }
+    {
+        "username": "lilja",
+        "password": "lilja123",
+        "fullname": "Lilja Haraldsdóttir",
+        "interests": [
+            "Swimming"
+        ],
+        "location": {
+          "city": "Akranes",
+          "coordinates": {
+            "longitude": -22.0746,
+            "latitude": 64.3198
+          }
+        },
+        "age": 23,
+        "bio": "Competitive swimmer"
     },
-    "age": 23,
-    "bio": "Competitive swimmer"
-  },
-  {
-    "username": "egill",
-    "password": "egill123",
-    "fullname": "Egill Kristjánsson",
-    "interests": ["Skiing"],
-    "location": {
-      "city": "Grindavík",
-      "coordinates": {
-        "longitude": -22.4304,
-        "latitude": 63.8424
-      }
+    {
+        "username": "egill",
+        "password": "egill123",
+        "fullname": "Egill Kristjánsson",
+        "interests": [
+            "Skiing"
+        ],
+        "location": {
+          "city": "Akranes",
+          "coordinates": {
+            "longitude": -22.0746,
+            "latitude": 64.3198
+          }
+        },
+        "age": 34,
+        "bio": "Loves the mountains and the snow"
     },
-    "age": 34,
-    "bio": "Loves the mountains and the snow"
-  },
-  {
-    "username": "karl",
-    "password": "karl123",
-    "fullname": "Karl Jóhannsson",
-    "interests": ["Cycling"],
-    "location": {
-      "city": "Borgarnes",
-      "coordinates": {
-        "longitude": -21.926,
-        "latitude": 64.5486
-      }
+    {
+      "username": "karl",
+      "password": "karl123",
+      "fullname": "Karl Jóhannsson",
+      "interests": ["Cycling"],
+      "location": {
+        "city": "Mosfellsbær",
+        "coordinates": {
+          "longitude": -21.6915,
+          "latitude": 64.1674
+        }
+      },
+      "age": 27,
+      "bio": "Enjoys long-distance biking"
     },
-    "age": 27,
-    "bio": "Enjoys long-distance biking"
-  },
-  {
-    "username": "elin",
-    "password": "elin123",
-    "fullname": "Elín Sigríður Sigurðardóttir",
-    "interests": ["Painting"],
-    "location": {
-      "city": "Reykjanesbær",
-      "coordinates": {
-        "longitude": -22.5644,
-        "latitude": 63.9982
-      }
+    {
+        "username": "elin",
+        "password": "elin123",
+        "fullname": "Elín Sigríður Sigurðardóttir",
+        "interests": [
+            "Painting"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 29,
+        "bio": "Painter inspired by Icelandic landscapes"
     },
-    "age": 29,
-    "bio": "Painter inspired by Icelandic landscapes"
-  },
-  {
-    "username": "hrafn",
-    "password": "hrafn123",
-    "fullname": "Hrafn Þórisson",
-    "interests": ["Birdwatching"],
-    "location": {
-      "city": "Reykjanesbær",
-      "coordinates": {
-        "longitude": -22.5644,
-        "latitude": 63.9982
-      }
+    {
+        "username": "hrafn",
+        "password": "hrafn123",
+        "fullname": "Hrafn Þórisson",
+        "interests": [
+            "Birdwatching"
+        ],
+        "location": {
+          "city": "Mosfellsbær",
+          "coordinates": {
+            "longitude": -21.6915,
+            "latitude": 64.1674
+          }
+        },
+        "age": 35,
+        "bio": "Passionate about birdwatching"
     },
-    "age": 35,
-    "bio": "Passionate about birdwatching"
-  },
-  {
-    "username": "eir",
-    "password": "eir123",
-    "fullname": "Eir Ágústdóttir",
-    "interests": ["Knitting"],
-    "location": {
-      "city": "Reykjanesbær",
-      "coordinates": {
-        "longitude": -22.5644,
-        "latitude": 63.9982
-      }
+    {
+        "username": "eir",
+        "password": "eir123",
+        "fullname": "Eir Ágústdóttir",
+        "interests": [
+            "Knitting"
+        ],
+        "location": {
+          "city": "Akranes",
+          "coordinates": {
+            "longitude": -22.0746,
+            "latitude": 64.3198
+          }
+        },
+        "age": 28,
+        "bio": "Knitting designer and teacher"
     },
-    "age": 28,
-    "bio": "Knitting designer and teacher"
-  },
-  {
-    "username": "solvi",
-    "password": "solvi123",
-    "fullname": "Sölvi Magnússon",
-    "interests": ["Soccer"],
-    "location": {
-      "city": "Reykjanesbær",
-      "coordinates": {
-        "longitude": -22.5644,
-        "latitude": 63.9982
-      }
+    {
+        "username": "solvi",
+        "password": "solvi123",
+        "fullname": "Sölvi Magnússon",
+        "interests": [
+            "Soccer"
+        ],
+        "location": {
+            "city": "Reykjanesbær",
+            "coordinates": {
+                "longitude": -22.5644,
+                "latitude": 63.9982
+            }
+        },
+        "age": 21,
+        "bio": "Aspiring soccer player"
     },
-    "age": 21,
-    "bio": "Aspiring soccer player"
-  },
-  {
-    "username": "inga",
-    "password": "inga123",
-    "fullname": "Inga Hákonardóttir",
-    "interests": ["Reading"],
-    "location": {
-      "city": "Akranes",
-      "coordinates": {
-        "longitude": -22.0746,
-        "latitude": 64.3198
-      }
+    {
+        "username": "inga",
+        "password": "inga123",
+        "fullname": "Inga Hákonardóttir",
+        "interests": [
+            "Reading"
+        ],
+        "location": {
+            "city": "Akranes",
+            "coordinates": {
+                "longitude": -22.0746,
+                "latitude": 64.3198
+            }
+        },
+        "age": 26,
+        "bio": "Bookworm with a love for Icelandic sagas"
     },
-    "age": 26,
-    "bio": "Bookworm with a love for Icelandic sagas"
-  },
-  {
-    "username": "thor",
-    "password": "thor123",
-    "fullname": "Þór Sigurðsson",
-    "interests": ["Guitar"],
-    "location": {
-      "city": "Mosfellsbær",
-      "coordinates": {
-        "longitude": -21.6915,
-        "latitude": 64.1674
-      }
+    {
+        "username": "thor",
+        "password": "thor123",
+        "fullname": "Þór Sigurðsson",
+        "interests": [
+            "Guitar"
+        ],
+        "location": {
+            "city": "Mosfellsbær",
+            "coordinates": {
+                "longitude": -21.6915,
+                "latitude": 64.1674
+            }
+        },
+        "age": 25,
+        "bio": "Guitarist and musician"
     },
-    "age": 25,
-    "bio": "Guitarist and musician"
-  },
-  {
-    "username": "birna",
-    "password": "birna123",
-    "fullname": "Birna Óskarsdóttir",
-    "interests": ["Cooking"],
-    "location": {
-      "city": "Egilsstaðir",
-      "coordinates": {
-        "longitude": -14.3948,
-        "latitude": 65.2675
-      }
+    {
+        "username": "birna",
+        "password": "birna123",
+        "fullname": "Birna Óskarsdóttir",
+        "interests": [
+            "Cooking"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 32,
+        "bio": "Culinary artist and food lover"
     },
-    "age": 32,
-    "bio": "Culinary artist and food lover"
-  },
-  {
-    "username": "runar",
-    "password": "runar123",
-    "fullname": "Rúnar Björnsson",
-    "interests": ["Chess"],
-    "location": {
-      "city": "Mosfellsbær",
-      "coordinates": {
-        "longitude": -21.6915,
-        "latitude": 64.1674
-      }
+    {
+        "username": "runar",
+        "password": "runar123",
+        "fullname": "Rúnar Björnsson",
+        "interests": [
+            "Chess"
+        ],
+        "location": {
+            "city": "Mosfellsbær",
+            "coordinates": {
+                "longitude": -21.6915,
+                "latitude": 64.1674
+            }
+        },
+        "age": 31,
+        "bio": "Chess player, loves strategy"
     },
-    "age": 31,
-    "bio": "Chess player, loves strategy"
-  },
-  {
-    "username": "vigdis",
-    "password": "vigdis123",
-    "fullname": "Vigdís Helgadóttir",
-    "interests": ["Sailing"],
-    "location": {
-      "city": "Stykkishólmur",
-      "coordinates": {
-        "longitude": -22.731,
-        "latitude": 65.075
-      }
+    {
+        "username": "vigdis",
+        "password": "vigdis123",
+        "fullname": "Vigdís Helgadóttir",
+        "interests": [
+            "Sailing"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 33,
+        "bio": "Passionate about the sea and sailing"
     },
-    "age": 33,
-    "bio": "Passionate about the sea and sailing"
-  },
-  {
-    "username": "sigga",
-    "password": "sigga123",
-    "fullname": "Sigga Rós Jónsdóttir",
-    "interests": ["Running"],
-    "location": {
-      "city": "Mosfellsbær",
-      "coordinates": {
-        "longitude": -21.6915,
-        "latitude": 64.1674
-      }
+    {
+        "username": "sigga",
+        "password": "sigga123",
+        "fullname": "Sigga Rós Jónsdóttir",
+        "interests": [
+            "Running"
+        ],
+        "location": {
+            "city": "Mosfellsbær",
+            "coordinates": {
+                "longitude": -21.6915,
+                "latitude": 64.1674
+            }
+        },
+        "age": 27,
+        "bio": "Runner and fitness enthusiast"
     },
-    "age": 27,
-    "bio": "Runner and fitness enthusiast"
-  },
-  {
-    "username": "freyr",
-    "password": "freyr123",
-    "fullname": "Freyr Elíasson",
-    "interests": ["Basketball"],
-    "location": {
-      "city": "Hveragerði",
-      "coordinates": {
-        "longitude": -21.189,
-        "latitude": 63.9974
-      }
+    {
+        "username": "freyr",
+        "password": "freyr123",
+        "fullname": "Freyr Elíasson",
+        "interests": [
+            "Basketball"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 24,
+        "bio": "Basketball player, tall and proud"
     },
-    "age": 24,
-    "bio": "Basketball player, tall and proud"
-  },
-  {
-    "username": "elva",
-    "password": "elva123",
-    "fullname": "Elva Árnadóttir",
-    "interests": ["Gardening"],
-    "location": {
-      "city": "Seltjarnarnes",
-      "coordinates": {
-        "longitude": -21.7344,
-        "latitude": 64.1544
-      }
+    {
+        "username": "elva",
+        "password": "elva123",
+        "fullname": "Elva Árnadóttir",
+        "interests": [
+            "Gardening"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 30,
+        "bio": "Garden enthusiast and nature lover"
     },
-    "age": 30,
-    "bio": "Garden enthusiast and nature lover"
-  },
-  {
-    "username": "valur",
-    "password": "valur123",
-    "fullname": "Valur Þorsteinsson",
-    "interests": ["Skiing"],
-    "location": {
-      "city": "Akureyri",
-      "coordinates": {
-        "longitude": -18.1262,
-        "latitude": 65.6885
-      }
+    {
+        "username": "valur",
+        "password": "valur123",
+        "fullname": "Valur Þorsteinsson",
+        "interests": [
+            "Skiing"
+        ],
+        "location": {
+            "city": "Akureyri",
+            "coordinates": {
+                "longitude": -18.1262,
+                "latitude": 65.6885
+            }
+        },
+        "age": 34,
+        "bio": "Skiing down mountains in the winter"
     },
-    "age": 34,
-    "bio": "Skiing down mountains in the winter"
-  },
-  {
-    "username": "asgeir",
-    "password": "asgeir123",
-    "fullname": "Ásgeir Bjarnason",
-    "interests": ["Fishing"],
-    "location": {
-      "city": "Þorlákshöfn",
-      "coordinates": {
-        "longitude": -21.1468,
-        "latitude": 63.8607
-      }
+    {
+        "username": "asgeir",
+        "password": "asgeir123",
+        "fullname": "Ásgeir Bjarnason",
+        "interests": [
+            "Fishing"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 29,
+        "bio": "Loves the quiet and patience of fishing"
     },
-    "age": 29,
-    "bio": "Loves the quiet and patience of fishing"
-  },
-  {
-    "username": "sara",
-    "password": "sara123",
-    "fullname": "Sara Guðmundsdóttir",
-    "interests": ["Yoga"],
-    "location": {
-      "city": "Mosfellsbær",
-      "coordinates": {
-        "longitude": -21.6915,
-        "latitude": 64.1674
-      }
+    {
+        "username": "sara",
+        "password": "sara123",
+        "fullname": "Sara Guðmundsdóttir",
+        "interests": [
+            "Yoga"
+        ],
+        "location": {
+            "city": "Mosfellsbær",
+            "coordinates": {
+                "longitude": -21.6915,
+                "latitude": 64.1674
+            }
+        },
+        "age": 28,
+        "bio": "Yoga instructor with a passion for health"
     },
-    "age": 28,
-    "bio": "Yoga instructor with a passion for health"
-  },
-  {
-    "username": "viktor",
-    "password": "viktor123",
-    "fullname": "Viktor Stefánsson",
-    "interests": ["Photography"],
-    "location": {
-      "city": "Bolungarvík",
-      "coordinates": {
-        "longitude": -23.2542,
-        "latitude": 66.1555
-      }
+    {
+        "username": "viktor",
+        "password": "viktor123",
+        "fullname": "Viktor Stefánsson",
+        "interests": [
+            "Photography"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 30,
+        "bio": "Capturing Iceland's beauty through the lens"
     },
-    "age": 30,
-    "bio": "Capturing Iceland's beauty through the lens"
-  },
-  {
-    "username": "harpa",
-    "password": "harpa123",
-    "fullname": "Harpa Sigríður Ásgeirsdóttir",
-    "interests": ["Drawing"],
-    "location": {
-      "city": "Fáskrúðsfjörður",
-      "coordinates": {
-        "longitude": -14.0276,
-        "latitude": 64.9311
-      }
+    {
+        "username": "harpa",
+        "password": "harpa123",
+        "fullname": "Harpa Sigríður Ásgeirsdóttir",
+        "interests": [
+            "Drawing"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 26,
+        "bio": "Artist and illustrator inspired by nature"
     },
-    "age": 26,
-    "bio": "Artist and illustrator inspired by nature"
-  },
-  {
-    "username": "ragnar",
-    "password": "ragnar123",
-    "fullname": "Ragnar Haraldsson",
-    "interests": ["Woodworking"],
-    "location": {
-      "city": "Dalvík",
-      "coordinates": {
-        "longitude": -18.5333,
-        "latitude": 65.9702
-      }
+    {
+        "username": "ragnar",
+        "password": "ragnar123",
+        "fullname": "Ragnar Haraldsson",
+        "interests": [
+            "Woodworking"
+        ],
+        "location": {
+          "city": "Reykjavík",
+          "coordinates": {
+            "longitude": -21.9422367,
+            "latitude": 64.145981
+          }
+        },
+        "age": 32,
+        "bio": "Creating handcrafted wooden pieces"
     },
-    "age": 32,
-    "bio": "Creating handcrafted wooden pieces"
-  }
+    {
+        "username": "TMoney",
+        "password": "tomas123",
+        "fullname": "Tomas",
+        "bio": "test",
+        "interests": [
+            "Gaming",
+            "Movies",
+            "Technology"
+        ],
+        "location": {
+            "city": "Reykjavík",
+            "coordinates": {
+                "longitude": -21.9422367,
+                "latitude": 64.145981
+            }
+        }
+    }
 ]
