@@ -3,7 +3,6 @@ from app.logic.user_logic import UserLogic
 from app.logic.filter_logic import FilterLogic
 from app.logic.message_logic import MessageLogic
 from app.logic.location_logic import LocationLogic
-from app.views.mainmenu_view import MainMenuView
 from app.views.login_view import LoginView
 from app.logic.login_logic import LoginLogic
 
