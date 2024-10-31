@@ -1,9 +1,12 @@
 import json
+import os
 
 class Database:
     def __init__(self):
         self.users_file = "app/data/users.json"
         self.messages_file = "app/data/messages.json"
+        self.swipes_file = "app/data/swipes.json"
+        self.matches_file = "app/data/matches.json"
         self.user_storage = self.load_users()
 
     def load_users(self):
@@ -21,7 +24,7 @@ class Database:
             print(f"Error: {self.users_file} not found.")
             return {}
         except Exception as e:
-            print(f"Error loading users.json: {e}")  # Print any other errors
+            print(f"Error loading users.json: {e}") 
             return {}
 
     def save_users(self, user_storage):
@@ -33,3 +36,41 @@ class Database:
         """
         with open(self.users_file, 'w', encoding='utf-8') as file:
             json.dump(user_storage, file, ensure_ascii=False, indent=4)
+
+    def load_data(self, file_path):
+        """Helper function to load JSON data or return an empty list if the file is missing."""
+        if os.path.exists(file_path):
+            with open(file_path, 'r', encoding='utf-8') as file:
+                return json.load(file)
+        return []
+
+    def save_data(self, file_path, data):
+        """Helper function to save data to a JSON file."""
+        with open(file_path, 'w', encoding='utf-8') as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
+
+    # Methods for managing swipes
+    def add_swipe(self, current_user, target_user, action):
+        swipes = self.load_data(self.swipes_file)
+        if current_user not in swipes:
+            swipes[current_user] = {"liked": [], "passed": []}
+        if action == "like" and target_user not in swipes[current_user]["liked"]:
+            swipes[current_user]["liked"].append(target_user)
+        elif action == "pass" and target_user not in swipes[current_user]["passed"]:
+            swipes[current_user]["passed"].append(target_user)
+        self.save_data(self.swipes_file, swipes)
+
+    # Methods for managing matches
+    def add_match(self, user1, user2):
+        matches = self.load_data(self.matches_file)
+        if {"user1": user1, "user2": user2} not in matches and {"user1": user2, "user2": user1} not in matches:
+            matches.append({"user1": user1, "user2": user2})
+        self.save_data(self.matches_file, matches)
+
+    # def remove_match(self, user1, user2):
+    #     matches = self.load_data(self.matches_file)
+    #     matches = [match for match in matches if not (
+    #         (match["user1"] == user1 and match["user2"] == user2) or
+    #         (match["user1"] == user2 and match["user2"] == user1)
+    #     )]
+    #     self.save_data(self.matches_file, matches)
