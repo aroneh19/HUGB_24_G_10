@@ -1,3 +1,6 @@
+from app.logic.user_logic import UserLogic
+
+
 class LoginView:
     def __init__(self):
         self.user_logic = UserLogic()

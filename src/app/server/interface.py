@@ -4,14 +4,35 @@ from app.logic.filter_logic import FilterLogic
 from app.logic.message_logic import MessageLogic
 from app.logic.location_logic import LocationLogic
 from app.views.mainmenu_view import MainMenuView
+from app.views.login_view import LoginView
+from app.logic.login_logic import LoginLogic
 
 class SystemInterface:
+
+    def start_app(self):
+        print("===Welcome to Meet4Real====")
+
+        if self.login_menu():
+            self.main_menu()
+
+        else: 
+            print("Login Error.")   
+        
     def __init__(self):
         self.db = Database()
         self.user_logic = UserLogic()
         self.filter_logic = FilterLogic()
         self.message_logic = MessageLogic()
-        self.location_logic = LocationLogic()
+        self.login_logic = LoginLogic()
+
+    def login_menu(self):
+        login_view = LoginView()
+        success = login_view.login_menu()
+        if not success:
+            print("Invalid login credentials.")
+        return success
+ 
+ 
 
     def main_menu(self):
         """Display the main menu."""
