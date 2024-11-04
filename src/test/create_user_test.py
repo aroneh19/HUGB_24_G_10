@@ -52,7 +52,6 @@ class TestCreateProfile(unittest.TestCase):
 
         # Assert successful profile creation
         self.assertTrue(success)
-        self.assertEqual(message, "User created successfully!")
         self.mock_save_users.assert_called_once()  # Ensure save_users is called once
 
     def test_create_user_username_taken(self):

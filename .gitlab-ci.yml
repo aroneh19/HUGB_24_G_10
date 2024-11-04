@@ -22,23 +22,11 @@ test:
     paths:
       - .pip-cache/
   script:
-    - pwd  # Print current working directory
-    - ls -R  # List all files and directories to verify structure
-    - export PYTHONPATH="$CI_PROJECT_DIR/src/app:$CI_PROJECT_DIR/test"
-    - python -m unittest discover -v -s "$CI_PROJECT_DIR/test" -p "*.py"  # Absolute path
-    - coverage run -m unittest discover -v -s "$CI_PROJECT_DIR/test" -p "*.py"  # Absolute path
-    - coverage report -m --omit="src/test/*,*/__init__.py"
-    - coverage html
-  coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
-  artifacts:
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: htmlcov/index.html  # Ensure this path is correct
-    paths:
-      - htmlcov/
-    expire_in: 1 week
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - .pip-cache/
+    - export PYTHONPATH=$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test
+    - cd src  # Change to the `src` directory
+    - coverage run --omit="test/*" -m unittest test.create_user_test
+    - coverage run --append --omit="test/*" -m unittest test.filter_test
+    - coverage run --append --omit="test/*" -m unittest test.location_test
+    - coverage run --append --omit="test/*" -m unittest test.user_test
+    - coverage report
+    - coverage xml  # Ensure this command generates `coverage.xml` in the current directory
