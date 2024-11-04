@@ -1,22 +1,33 @@
+image: python:3.10
+
 stages:
   - test
 
 variables:
-  PYTHONPATH: "$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+
+before_script:
+  - python --version
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+  - pip install coverage
 
 test:
   stage: test
-  image: python:3.9  # Use a Python Docker image
-  before_script:
-    - pip install -r requirements.txt  # Install dependencies from requirements.txt
+  cache:
+    paths:
+      - .pip-cache/
   script:
+    - export PYTHONPATH=$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test
     - cd src  # Change to the `src` directory
     - coverage run --omit="test/*" -m unittest test.create_user_test
     - coverage run --append --omit="test/*" -m unittest test.filter_test
     - coverage run --append --omit="test/*" -m unittest test.location_test
     - coverage run --append --omit="test/*" -m unittest test.login_test
     - coverage run --append --omit="test/*" -m unittest test.user_test
-    - coverage report  # Generate a coverage report
-
-only:
-  - branches  # Run on every commit to any branch
+    - coverage report
+    - coverage xml  # Ensure this command generates `coverage.xml` in the current directory
