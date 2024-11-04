@@ -23,10 +23,10 @@ test:
       - .pip-cache/
   script:
     - pwd  # Print current working directory
-    - ls   # List files in the current directory
+    - ls -R  # List all files and directories to verify structure
     - export PYTHONPATH="$CI_PROJECT_DIR/src/app:$CI_PROJECT_DIR/test"
-    - python -m unittest discover -v -s test -p "*.py"
-    - coverage run -m unittest discover -v -s test -p "*.py"
+    - python -m unittest discover -v -s "$CI_PROJECT_DIR/test" -p "*.py"  # Absolute path
+    - coverage run -m unittest discover -v -s "$CI_PROJECT_DIR/test" -p "*.py"  # Absolute path
     - coverage report -m --omit="src/test/*,*/__init__.py"
     - coverage html
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
