@@ -32,7 +32,7 @@ test:
     reports:
       coverage_report:
         coverage_format: cobertura
-        path: htmlcov/index.html  # Adjust this if necessary
+        path: coverage.html
     paths:
       - htmlcov/
       - coverage.html
