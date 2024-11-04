@@ -40,6 +40,5 @@ coverage/
 # Requirements File #
 requirements.txt
 
-htmlcov/
 .pytest_cache/
 .history/

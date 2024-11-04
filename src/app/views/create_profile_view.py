@@ -1,10 +1,27 @@
-from app.logic.user_logic import UserLogic
+from app.logic.user_logic import UserLogic 
 from app.logic.location_logic import LocationLogic
 from app.utils.utils import clearTerminal
 
 class CreateProfileView:
-    def __init__(self):
-        self.user_logic = UserLogic()
+    """
+    View responsible for creating a new user profile.
+
+    Attributes:
+    user_logic (UserLogic): Handles user-related operations.
+    location_logic (LocationLogic): Handles location-related operations.
+    profile (dict): Stores profile information.
+    """
+    
+    def __init__(self, user_logic):
+        """
+        Initializes CreateProfileView with UserLogic and LocationLogic instances.
+
+        Attributes:
+        user_logic (UserLogic): Manages user-related logic.
+        location_logic (LocationLogic): Manages location-related operations.
+        profile (dict): Stores profile information.
+        """
+        self.user_logic = user_logic
         self.location_logic = LocationLogic()
 
         self.profile = {
@@ -18,7 +35,9 @@ class CreateProfileView:
         }
 
     def create_profile_menu(self):
+        """Displays the profile creation menu and handles user input for the profile."""
         while True:
+            clearTerminal()
             print("=== Create a New Profile ===")
             username = input("Enter a username: ")
             password = input("Enter a password: ")
@@ -34,15 +53,22 @@ class CreateProfileView:
                 print(f"Error getting coordinates: {coordinates['error']}")
                 continue
 
-            success, message = self.user_logic.create_user(username, password, fullname, age, bio, interests, location, coordinates)
+            success, message = self.user_logic.create_user(
+                username, password, fullname, age, bio, interests, location, coordinates
+            )
             if success:
                 print(f"Profile for {username} created successfully!")
-                break
+                return True
             else:
                 print(f"Failed to create profile: {message}")
 
-    
     def get_interests(self):
+        """
+        Prompts the user to select interests from a predefined list.
+
+        Returns:
+        list: A list of selected interests.
+        """
         print("Please select your interests from the list below:")
         interests_list = [
             "Sports", "Books", "Music", "Movies", "Video Games", "Art", 
@@ -95,13 +121,8 @@ class CreateProfileView:
                 index = int(choice) - 1
                 if 0 <= index < len(locations_list):
                     selected_location = locations_list[index]
-                    print(f"Selected location: {selected_location}")
                     return selected_location
                 else:
                     print("Invalid choice, please try again.")
             except ValueError:
                 print("Invalid input. Please enter a number.")
-
-if __name__ == "__main__":
-    create_profile_view = CreateProfileView()
-    create_profile_view.create_profile_menu()

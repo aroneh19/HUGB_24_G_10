@@ -1,9 +1,33 @@
 from app.models.database import Database
+from app.models.user_model import User
+
 
 class UserLogic:
     def __init__(self):
         self.db = Database()
         self.current_user = None  # Initialize current_user here
+    
+    def verify_user(self, username, password):
+        """
+        Verify if the provided username and password match a user in the database.
+
+        Parameters:
+        username (str): The username to verify.
+        password (str): The password to verify.
+
+        Returns:
+        tuple: A tuple containing a boolean indicating success or failure and a message.
+        """
+        user_storage = self.db.load_users()  # Load users from the database
+        for user in user_storage:
+            if user.get("username") == username:
+                if user.get("password") == password:  # Check the password
+                    self.set_current_user(username)  # Set the current user
+                    return True, user
+                else:
+                    return False, "Invalid password."
+        return False, "Username not found."
+
 
     def set_current_user(self, username):
         """Set the current user by finding them in the user storage."""
@@ -14,7 +38,16 @@ class UserLogic:
                 break
 
     def check_username(self, username, user_storage):
-        """Check if username is available."""
+        """
+        Check if username is available.
+
+        Parameters:
+        username (str): The username to check.
+        user_storage (list): The list of existing users.
+
+        Returns:
+        tuple: A tuple containing a boolean indicating the availability of the username and a message.
+        """
         for user in user_storage:
             if user.get("username") == username:
                 return False, "Username already taken."
@@ -50,33 +83,23 @@ class UserLogic:
             return True, None
         return False, "Bio cannot be empty."
 
-    def create_user(self, username, password, fullname, age, bio, interests, location, coordinates):
-        """Create a new user and save to the database."""
-        is_valid, msg = self.validate_user_data(username, age, bio, interests, location)
-        if not is_valid:
-            return False, msg
+    def create_user(self, username, password, fullname, age, bio, interests, city, coordinates):
+        """
+        Create a new user and save to the database.
 
-        # Create and save the user
-        new_user = {
-            "username": username,
-            "password": password,
-            "fullname": fullname,
-            "interests": interests,
-            "location": {
-                "city": location,
-                "coordinates": coordinates
-            },
-            "age": int(age),
-            "bio": bio
-        }
-        user_storage = self.db.load_users()
-        user_storage.append(new_user)
-        self.db.save_users(user_storage)
+        Parameters:
+        username (str): The username of the user.
+        password (str): The password of the user.
+        fullname (str): The full name of the user.
+        age (int): The age of the user.
+        bio (str): The bio of the user.
+        interests (list): The interests of the user.
+        location (str): The location of the user.
+        coordinates (dict): The coordinates of the user's location.
 
-        return True, "User created successfully!"
-    
-    def validate_user_data(self, username, age, bio, interests, location):
-        """Validate user data."""
+        Returns:
+        tuple: A tuple containing a boolean indicating the success of the operation and a message.
+        """
         user_storage = self.db.load_users()
 
         valid_username, msg = self.check_username(username, user_storage)
@@ -91,13 +114,19 @@ class UserLogic:
         if not valid_interests:
             return False, msg
 
-        valid_location, msg = self.check_location(location)
+        valid_location, msg = self.check_location(city)
         if not valid_location:
             return False, msg
 
         valid_bio, msg = self.check_bio(bio)
         if not valid_bio:
             return False, msg
+        
+        location = {"city": city, "coordinates": coordinates}
+
+        new_user = User(username, password, fullname, bio, interests, location)
+        user_storage.append(new_user.to_dict())
+        self.db.save_users(user_storage)
 
         return True, None
 

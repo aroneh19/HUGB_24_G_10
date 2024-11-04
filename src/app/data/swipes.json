@@ -1,0 +1,195 @@
+{
+    "vigdis": {
+        "liked": [
+            "anna",
+            "kristin",
+            "sara",
+            "steinunn"
+        ],
+        "passed": [
+            "bjorn",
+            "johann",
+            "sigga",
+            "hrafn"
+        ]
+    },
+    "steinunn": {
+        "liked": [
+            "vigdis"
+        ],
+        "passed": [
+            "johann",
+            "snorri",
+            "maria"
+        ]
+    },
+    "johann": {
+        "liked": [
+            "hrafn",
+            "asgeir",
+            "elva",
+            "sara",
+            "thor"
+        ],
+        "passed": [
+            "elin",
+            "kristin"
+        ]
+    },
+    "sara": {
+        "liked": [
+            "steinunn",
+            "helga",
+            "asgeir",
+            "birna",
+            "snorri",
+            "eir",
+            "inga",
+            "solvi",
+            "hrafn",
+            "johann"
+        ],
+        "passed": [
+            "viktor",
+            "maria",
+            "elva",
+            "sigga",
+            "ragnar",
+            "egill",
+            "gunnar",
+            "valur",
+            "kristin",
+            "anna",
+            "thor",
+            "runar",
+            "lilja",
+            "karl"
+        ]
+    },
+    "anna": {
+        "liked": [
+            "harpa"
+        ],
+        "passed": []
+    },
+    "harpa": {
+        "liked": [
+            "maria",
+            "egill",
+            "thor",
+            "asgeir",
+            "runar",
+            "anna"
+        ],
+        "passed": [
+            "steinunn",
+            "hrafn",
+            "freyr",
+            "inga",
+            "johann",
+            "sara"
+        ]
+    },
+    "karl": {
+        "liked": [
+            "hrafn",
+            "sara",
+            "valur"
+        ],
+        "passed": [
+            "birna",
+            "maria"
+        ]
+    },
+    "hrafn": {
+        "liked": [
+            "kristin",
+            "bjorn",
+            "gunnar",
+            "viktor",
+            "steinunn",
+            "sigga",
+            "johann",
+            "helga",
+            "inga",
+            "lilja",
+            "elin",
+            "maria",
+            "snorri",
+            "runar",
+            "karl"
+        ],
+        "passed": [
+            "asgeir",
+            "birna",
+            "thor",
+            "sara",
+            "ragnar",
+            "anna",
+            "vigdis",
+            "egill",
+            "solvi",
+            "valur",
+            "elva",
+            "eir",
+            "harpa"
+        ]
+    },
+    "runar": {
+        "liked": [
+            "hrafn",
+            "helga"
+        ],
+        "passed": []
+    },
+    "helga": {
+        "liked": [
+            "snorri",
+            "vigdis",
+            "maria",
+            "bjorn",
+            "valur",
+            "lilja",
+            "elva",
+            "freyr",
+            "runar"
+        ],
+        "passed": [
+            "anna",
+            "eir",
+            "egill",
+            "ragnar",
+            "birna",
+            "sara",
+            "kristin"
+        ]
+    },
+    "freyr": {
+        "liked": [
+            "maria",
+            "vigdis"
+        ],
+        "passed": [
+            "sara",
+            "karl"
+        ]
+    },
+    "maria": {
+        "liked": [
+            "karl",
+            "lilja",
+            "viktor",
+            "solvi",
+            "valur",
+            "harpa",
+            "freyr"
+        ],
+        "passed": [
+            "gunnar",
+            "elin",
+            "elva",
+            "steinunn",
+            "kristin"
+        ]
+    }
+}

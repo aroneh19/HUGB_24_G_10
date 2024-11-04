@@ -3,15 +3,33 @@ from app.logic.user_logic import UserLogic
 from app.logic.filter_logic import FilterLogic
 from app.logic.message_logic import MessageLogic
 from app.logic.location_logic import LocationLogic
-from app.views.mainmenu_view import MainMenuView
+from app.views.login_view import LoginView
+from app.logic.login_logic import LoginLogic
 
 class SystemInterface:
+
+    def start_app(self):
+        print("===Welcome to Meet4Real====")
+
+        if self.login_menu():
+            self.main_menu()
+
+        else: 
+            print("Login Error.")   
+        
     def __init__(self):
         self.db = Database()
         self.user_logic = UserLogic()
         self.filter_logic = FilterLogic()
         self.message_logic = MessageLogic()
-        self.location_logic = LocationLogic()
+        self.login_logic = LoginLogic()
+
+    def login_menu(self):
+        login_view = LoginView()
+        success = login_view.login_menu()
+        if not success:
+            print("Invalid login credentials.")
+        return success
 
     def main_menu(self):
         """Display the main menu."""
@@ -19,7 +37,22 @@ class SystemInterface:
         main_menu.main_menu()
 
     def add_user(self, username, password, fullname, interests, location, age, bio):
-        """Add a new user via UserLogic and save to the database."""
+        """
+        Add a new user via UserLogic and save to the database.
+
+        Parameters:
+        username (str): The username of the user.
+        password (str): The password of the user.
+        fullname (str): The full name of the user.
+        interests (list[str]): The interests of the user.
+        location (str): The location of the user.
+        age (int): The age of the user.
+        bio (str): The bio of the user.
+
+        Returns:
+        dict: A dictionary containing a message or an error.
+        int: A status code.
+        """
         # Get coordinates from Geoapify
         coordinates = self.location_logic.get_location_coordinates(location)
 
@@ -34,6 +67,43 @@ class SystemInterface:
             return {"error": msg}, 400
 
     def get_users(self):
-        """Get all users from the database."""
+        """
+        Get all users from the database.
+
+        Returns:
+        list: A list of users.
+        """
         users = self.db.load_users()
         return users
+
+    def log_swipe_action(self, current_user, target_user, action):
+        """
+        Log a swipe action ("like" or "pass") and check for a mutual match if the action is a "like".
+
+        Parameters:
+        current_user (str): The username of the user swiping.
+        target_user (str): The username of the user being swiped on.
+        action (str): "like" or "pass" action.
+
+        Returns:
+        bool: True if a mutual match is created, False otherwise.
+        """
+        # Record the swipe action in the swipes.json file
+        self.db.add_swipe(current_user, target_user, action)
+        
+        # Only check for a mutual match if the action is a "like"
+        if action == "like":
+            # Load the swipes data to see if target_user has already liked current_user
+            swipes = self.db.load_data(self.db.swipes_file)
+            
+            # Check if target_user has liked current_user
+            if target_user in swipes and current_user in swipes[target_user]["liked"]:
+                # If mutual like, record the match
+                self.db.add_match(current_user, target_user)
+                return True  # Indicate a match was found
+        
+        return False  # No match found
+
+    # def unmatch(self, user1, user2):
+    #     """Remove a match between two users."""
+    #     self.db.remove_match(user1, user2)
