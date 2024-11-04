@@ -31,7 +31,6 @@ instance/
 .eggs/
 
 # Test results #
-coverage/
 .cache/
 
 # MacOS #
