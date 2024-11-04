@@ -22,7 +22,7 @@ test:
     paths:
       - .pip-cache/
   script:
-    - export PYTHONPATH="$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test"
+    - export PYTHONPATH="$CI_PROJECT_DIR/src/app:$CI_PROJECT_DIR/test"
     - python -m unittest discover -v -s test -p "*.py"
     - coverage run -m unittest discover -v -s test -p "*.py"
     - coverage report -m --omit="src/test/*,*/__init__.py"
