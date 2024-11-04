@@ -1,9 +1,11 @@
 import unittest
 from app.logic.user_logic import UserLogic
+from app.logic.location_logic import LocationLogic
 
 class TestUser(unittest.TestCase):
     def setUp(self):
         self.user_logic = UserLogic()
+        self.location_logic = LocationLogic()
 
     def test_check_username(self):
         self.assertTrue(self.user_logic.check_username("new_user", self.user_logic.user_storage)[0])
@@ -45,8 +47,9 @@ class TestUser(unittest.TestCase):
         self.assertNotIn("jane_doe", self.user_logic.user_storage)
     
     def test_create_user_with_existing_username(self):
-        self.user_logic.create_user("john_doe", "password", "John Doe", 30, "I like soccer", ["soccer"], "Reykjavik")
-        result, msg = self.user_logic.create_user("john_doe", "newpassword", "Johnathan Doe", 25, "I love tennis", ["tennis"], "Reykjavik")
+        coordinates = self.location_logic.get_location_coordinates("Reykjavik")
+        self.user_logic.create_user("john_doe", "password", "John Doe", 30, "I like soccer", ["soccer"], "Reykjavik", coordinates)
+        result, msg = self.user_logic.create_user("john_doe", "newpassword", "Johnathan Doe", 25, "I love tennis", ["tennis"], "Reykjavik", coordinates)
         self.assertFalse(result)
         self.assertEqual(msg, "Username already taken.")
 
