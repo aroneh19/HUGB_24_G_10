@@ -2,6 +2,7 @@
 from app.logic.matches_logic import MatchesLogic
 from app.models.database import Database
 from app.utils.utils import clearTerminal
+from datetime import datetime
 
 
 class MatchesView:
@@ -45,9 +46,11 @@ class MatchesView:
             else:
                 print("Invalid choice, please try again.")
 
+
+
     def view_match_profile(self, match_username):
         """
-        Displays the profile of a selected match and allows sending a message.
+        Displays the profile of a selected match and allows viewing the conversation history and sending a message.
 
         Args:
             match_username (str): The username of the selected match.
@@ -62,9 +65,16 @@ class MatchesView:
             print(f"Location: {match_profile['location']['city']}")
             print(f"Interests: {', '.join(match_profile['interests'])}")
             print(f"Bio: {match_profile['bio']}")
+            
+            # Display conversation history
+            print("\n--- Conversation History ---")
+            self.display_conversation(match_username)
+            
+            # Prompt to send a message after viewing conversation
             self.send_message_prompt(match_username)
         else:
             print("Error: Could not find the selected user's profile.")
+
 
     def send_message_prompt(self, match_username):
         """
@@ -91,10 +101,42 @@ class MatchesView:
             recipient (str): The username of the recipient.
             message (str): The content of the message.
         """
-        messages = self.database.load_data(self.database.messages_file)
-        messages.append({
+        # Load or initialize the messages data as a dictionary with a "messages" list
+        messages_data = self.database.load_data(self.database.messages_file)
+        
+        # Ensure "messages" is a list within the dictionary
+        if "messages" not in messages_data or not isinstance(messages_data["messages"], list):
+            messages_data["messages"] = []
+
+        # Append the new message to the "messages" list
+        messages_data["messages"].append({
             "sender": self.current_user['username'],
-            "recipient": recipient,
-            "message": message
+            "receiver": recipient,
+            "message": message,
+            "time": str(datetime.now())  # This line should work now
         })
-        self.database.save_data(self.database.messages_file, messages)
+
+        # Save the updated messages dictionary back to the file
+        self.database.save_data(self.database.messages_file, messages_data)
+
+    def display_conversation(self, match_username):
+        """
+        Displays the conversation history between the current user and a match.
+
+        Args:
+            match_username (str): The username of the match to display messages with.
+        """
+        messages_data = self.database.load_data(self.database.messages_file)
+        conversation = [
+            msg for msg in messages_data.get("messages", [])
+            if (msg["sender"] == self.current_user['username'] and msg["receiver"] == match_username) or
+            (msg["sender"] == match_username and msg["receiver"] == self.current_user['username'])
+        ]
+
+        if conversation:
+            for msg in conversation:
+                sender = "You" if msg["sender"] == self.current_user['username'] else msg["sender"]
+                print(f"{sender}: {msg['message']} ({msg['time']})")
+        else:
+            print("No messages with this user yet.")
+
