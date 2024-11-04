@@ -29,8 +29,6 @@ class LoginLogic:
                     return True
         return False
 
-
-
     def logout_user(self, username):
         """
         Log out a user.
