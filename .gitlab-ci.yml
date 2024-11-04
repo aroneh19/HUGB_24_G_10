@@ -1,25 +1,30 @@
+image: python:3.10
+
 stages:
   - test
 
 variables:
-  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
 
 cache:
   paths:
-    - .cache/pip/
+    - .pip-cache/
 
-test-job:
+before_script:
+  - python --version
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+  - pip install coverage
+
+test:
   stage: test
-  image: python:3.13
-  variables:
-    PYTHONPATH: "$CI_PROJECT_DIR/src"
-  before_script:
-    - pip install --upgrade pip
-    - pip install pytest pytest-cov
-    - pip install -r requirements.txt
   script:
-    - pytest --cov=hugb-24-g-10
+    - export PYTHONPATH=$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test
+    - coverage run -m unittest discover -v -s test -p "*.py"
+    - coverage report -m
+    - coverage html
   artifacts:
     paths:
-      - htmlcov/  # Adjust if your coverage report is in a different directory
-  coverage: '/^TOTAL.*?(\d+%)$/'
+      - htmlcov
+    expire_in: 1 week
+  coverage: '/TOTAL\s+\d+\s+\d+\s+(\d+)%/'
