@@ -22,6 +22,8 @@ test:
     paths:
       - .pip-cache/
   script:
+    - pwd  # Print current working directory
+    - ls   # List files in the current directory
     - export PYTHONPATH="$CI_PROJECT_DIR/src/app:$CI_PROJECT_DIR/test"
     - python -m unittest discover -v -s test -p "*.py"
     - coverage run -m unittest discover -v -s test -p "*.py"
@@ -32,10 +34,9 @@ test:
     reports:
       coverage_report:
         coverage_format: cobertura
-        path: htmlcov/index.html  # Adjust this if necessary
+        path: htmlcov/index.html  # Ensure this path is correct
     paths:
       - htmlcov/
-      - index.html
     expire_in: 1 week
   cache:
     key: ${CI_COMMIT_REF_SLUG}
