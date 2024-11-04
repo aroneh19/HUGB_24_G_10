@@ -29,6 +29,24 @@
             "receiver": "bjarni",
             "message": "hello bjarni, ",
             "time": "2024-11-02T16:56:20"
+        },
+        {
+            "sender": "anna",
+            "receiver": "harpa",
+            "message": "Hallo Harpa",
+            "time": "2024-11-04 20:12:06.206020"
+        },
+        {
+            "sender": "anna",
+            "receiver": "harpa",
+            "message": "Test",
+            "time": "2024-11-04 20:12:14.438958"
+        },
+        {
+            "sender": "harpa",
+            "receiver": "anna",
+            "message": "Hallo Hallo",
+            "time": "2024-11-04 20:14:18.137912"
         }
     ]
 }
