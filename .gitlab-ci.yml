@@ -1,0 +1,22 @@
+stages:
+  - test
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip/
+
+test-job:
+  stage: test
+  image: python:3.13
+  before_script:
+    - pip install --upgrade pip
+    - pip install pytest pytest-cov
+  script:
+    - pytest --cov=hugb-24-g-10
+  artifacts:
+    paths:
+      - htmlcov/  # Adjust if your coverage report is in a different directory
+  coverage: '/^TOTAL.*?(\d+%)$/'
