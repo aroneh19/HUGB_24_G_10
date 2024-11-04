@@ -32,16 +32,18 @@ class TestUser(unittest.TestCase):
         self.assertFalse(self.user_logic.check_bio("")[0])
 
     def test_create_user(self):
+        coordinates = self.location_logic.get_location_coordinates("Reykjavik")
         result = self.user_logic.create_user(
             "jon_doe", "password123", "Jon Doe", 30, 
-            "I enjoy basketball", ["basketball", "coding"], "Reykjavik"
+            "I enjoy basketball", ["basketball", "coding"], "Reykjavik", coordinates
         )
         self.assertTrue(result)
         self.assertIn("jon_doe", self.user_logic.user_storage)
 
+        coordinates = self.location_logic.get_location_coordinates("Akureyri")
         result = self.user_logic.create_user(
             "jane_doe", "password123", "Jane Doe", -5,
-            "I enjoy running", ["running"], "Akureyri"
+            "I enjoy running", ["running"], "Akureyri", coordinates
         )
         self.assertFalse(result)
         self.assertNotIn("jane_doe", self.user_logic.user_storage)
