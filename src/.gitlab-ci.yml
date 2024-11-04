@@ -1,0 +1,37 @@
+image: python:3.10
+
+stages:
+  - test
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+
+before_script:
+  - python --version
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+  - pip install coverage
+
+test:
+  stage: test
+  cache:
+    paths:
+      - .pip-cache/
+  script:
+    - export PYTHONPATH=$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test
+    - coverage run -m unittest discover -v -s test -p "*.py"
+    - coverage report -m --include="src/app/server/*.py" --omit="*/__init__.py,*/test/*"
+    - coverage xml -i --include="src/app/server/*.py" --omit="*/__init__.py,*/test/*"
+  coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - htmlcov
+    expire_in: 1 week
