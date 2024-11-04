@@ -15,12 +15,12 @@ before_script:
   - pip install --upgrade pip
   - pip install -r requirements.txt
   - pip install coverage
-  - export PYTHONPATH=$CI_PROJECT_DIR/app/src:$CI_PROJECT_DIR/app/test
+  - export PYTHONPATH=$CI_PROJECT_DIR/app/src:$CI_PROJECT_DIR/app
 
 test:
   stage: test
   script:
-    - coverage run -m unittest discover -s app/test -p "test_*.py"
+    - coverage run -m unittest discover -s app/test -p "*.py"
     - coverage report -m
     - coverage html
   artifacts:
