@@ -11,6 +11,24 @@
             "receiver": "aron",
             "message": "I'm good, thanks!",
             "time": "2024-09-22T14:31:00"
+        },
+        {
+            "sender": "user1",
+            "receiver": "aron",
+            "message": "hello world",
+            "time": "2024-11-02T16:51:48"
+        },
+        {
+            "sender": "user1",
+            "receiver": "jonassos",
+            "message": "hallo jonassito",
+            "time": "2024-11-02T16:53:15"
+        },
+        {
+            "sender": "aron",
+            "receiver": "bjarni",
+            "message": "hello bjarni, ",
+            "time": "2024-11-02T16:56:20"
         }
     ]
 }
