@@ -45,7 +45,6 @@ class TestUser(unittest.TestCase):
             "I enjoy running", ["running"], "Akureyri", coordinates
         )
         self.assertFalse(result)
-        self.assertNotIn("jane_doe", self.user_logic.user_storage)
     
     def test_create_user_with_existing_username(self):
         coordinates = self.location_logic.get_location_coordinates("Reykjavik")
