@@ -6,7 +6,7 @@ variables:
 
 test:
   stage: test
-  image: python:3.10  # Use a Python Docker image
+  image: python:3.9  # Use a Python Docker image
   before_script:
     - pip install -r requirements.txt  # Install dependencies from requirements.txt
   script:
