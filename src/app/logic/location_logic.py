@@ -10,9 +10,6 @@ class LocationLogic:
         
         self.api_key = os.getenv('GEOAPIFY_API_KEY')
 
-        if self.api_key is None:
-            raise ValueError("API key not found. Please check your .env file.")
-
     def get_location_coordinates(self, location):
         """
         Get latitude and longitude of a location using Geoapify API.
