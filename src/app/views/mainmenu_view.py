@@ -3,6 +3,7 @@ from app.views.filter_view import FilterView
 from app.views.swiping_view import SwipingView
 from app.views.edit_profile_view import EditProfileView
 from app.server.interface import SystemInterface
+from app.views.matches_view import MatchesView
 from app.utils.utils import clearTerminal
 
 class MainMenuView:
@@ -37,9 +38,8 @@ class MainMenuView:
         clearTerminal()
         print("1. Start Swiping")
         print("2. Filter")
-        print("3. Messages")
-        print("4. Profile")
-        print("5. Edit Profile")
+        print("3. Matches")
+        print("4. Edit Profile")
 
     def main_menu(self):
         """
@@ -53,13 +53,10 @@ class MainMenuView:
             elif choice == "2":
                 self.filter.filter_menu()
             elif choice == "3":
-                print("Messages")
+                matches_view = MatchesView(self.current_user)
+                matches_view.display_matches()
             elif choice == "4":
-                print("Profile")
-            elif choice == "5":
                 edit_view = EditProfileView(self.user_logic.current_user)
                 edit_view.display_edit_profile()
             else:
                 print("Invalid choice, try again.")
-
-from app.logic.user_logic import UserLogic

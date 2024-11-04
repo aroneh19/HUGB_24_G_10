@@ -27,7 +27,7 @@ class LoginView:
 
             success, result = self.user_logic.verify_user(username, password)
             if success:
-                return username  
+                return result  
             else:
                 print(f"Login failed: {result}")
                 retry = input("Do you want to try again? (y/n): ")
