@@ -23,17 +23,19 @@ test:
       - .pip-cache/
   script:
     - export PYTHONPATH=$CI_PROJECT_DIR/app:$CI_PROJECT_DIR/test
+    - python -m unittest discover -v -s test -p "*.py"  # Ensure tests can be discovered
     - coverage run -m unittest discover -v -s test -p "*.py"
     - coverage report -m --omit="app/test/*,*/__init__.py"
-    - coverage html
+    - coverage html  # Generate HTML report
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
   artifacts:
     reports:
       coverage_report:
         coverage_format: cobertura
-        path: coverage.html
+        path: coverage.html  # Correct path
     paths:
       - htmlcov
+      - coverage.html  # Ensure coverage report is uploaded
     expire_in: 1 week
   cache:
     key: ${CI_COMMIT_REF_SLUG}
