@@ -19,10 +19,7 @@ before_script:
 test:
   stage: test
   script:
-    - pwd
-    - ls -R $CI_PROJECT_DIR/app/src
-    - export PYTHONPATH=$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test
-    - cp $CI_PROJECT_DIR/app/src/data/users.json $CI_PROJECT_DIR/app/data/
+    - export PYTHONPATH=$CI_PROJECT_DIR/app:$CI_PROJECT_DIR/test
     - coverage run -m unittest discover -v -s test -p "*.py"
     - coverage report -m
     - coverage html
