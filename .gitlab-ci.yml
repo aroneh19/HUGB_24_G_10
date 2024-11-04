@@ -29,7 +29,7 @@ test:
     - coverage run --append --omit="test/*" -m unittest test.location_test
     - coverage run --append --omit="test/*" -m unittest test.login_test
     - coverage run --append --omit="test/*" -m unittest test.user_test
-    - coverage report
+    - coverage report -m
     - coverage xml  # Ensure this command generates `coverage.xml` in the current directory
     - ls -al  # Debugging step to check for `coverage.xml` location
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
