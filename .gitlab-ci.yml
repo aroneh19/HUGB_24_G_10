@@ -35,7 +35,7 @@ test:
     reports:
       coverage_report:
         coverage_format: cobertura
-        path: coverage.htmtl
+        path: coverage.html
     paths:
       - htmlcov
     expire_in: 1 week
