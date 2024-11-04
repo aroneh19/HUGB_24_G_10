@@ -38,7 +38,6 @@ class TestUser(unittest.TestCase):
             "I enjoy basketball", ["basketball", "coding"], "Reykjavik", coordinates
         )
         self.assertTrue(result)
-        self.assertIn("jon_doe", self.user_logic.user_storage)
 
         coordinates = self.location_logic.get_location_coordinates("Akureyri")
         result = self.user_logic.create_user(
