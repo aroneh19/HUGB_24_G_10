@@ -24,7 +24,11 @@ test:
   script:
     - export PYTHONPATH=$CI_PROJECT_DIR/src:$CI_PROJECT_DIR/test
     - cd src  # Change to the `src` directory
-    - coverage run -m unittest discover -v -s ../test -p "*.py"
+    - coverage run --omit="test/*" -m unittest test.create_user_test
+    - coverage run --append --omit="test/*" -m unittest test.filter_test
+    - coverage run --append --omit="test/*" -m unittest test.location_test
+    - coverage run --append --omit="test/*" -m unittest test.login_test
+    - coverage run --append --omit="test/*" -m unittest test.user_test
     - coverage report -m --include="app/server/*.py" --omit="*/__init__.py,*/test/*"
     - coverage xml -i --include="app/server/*.py" --omit="*/__init__.py,*/test/*"
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
