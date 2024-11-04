@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
             "jane_doe", "password123", "Jane Doe", -5,
             "I enjoy running", ["running"], "Akureyri", coordinates
         )
-        self.assertFalse(result)
+        self.assertFalse(result[0])
     
     def test_create_user_with_existing_username(self):
         coordinates = self.location_logic.get_location_coordinates("Reykjavik")
