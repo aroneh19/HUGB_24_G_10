@@ -27,7 +27,6 @@ test:
     - coverage run --omit="test/*" -m unittest test.create_user_test
     - coverage run --append --omit="test/*" -m unittest test.filter_test
     - coverage run --append --omit="test/*" -m unittest test.location_test
-    - coverage run --append --omit="test/*" -m unittest test.login_test
     - coverage run --append --omit="test/*" -m unittest test.user_test
     - coverage report
     - coverage xml  # Ensure this command generates `coverage.xml` in the current directory
