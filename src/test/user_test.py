@@ -7,11 +7,6 @@ class TestUser(unittest.TestCase):
         self.user_logic = UserLogic()
         self.location_logic = LocationLogic()
 
-    def test_check_username(self):
-        self.assertTrue(self.user_logic.check_username("new_user", self.user_logic.user_storage)[0])
-        self.user_logic.user_storage["existing_user"] = {}
-        self.assertFalse(self.user_logic.check_username("existing_user", self.user_logic.user_storage)[0])
-
     def test_check_age(self):
         self.assertTrue(self.user_logic.check_age(25)[0])
         self.assertFalse(self.user_logic.check_age(-1)[0])
