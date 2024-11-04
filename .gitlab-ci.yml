@@ -16,6 +16,7 @@ test-job:
   before_script:
     - pip install --upgrade pip
     - pip install pytest pytest-cov
+    - pip install -r requirements.txt
   script:
     - pytest --cov=hugb-24-g-10
   artifacts:
