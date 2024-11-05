@@ -47,7 +47,6 @@ class MatchesView:
                 print("Invalid choice, please try again.")
 
 
-
     def view_match_profile(self, match_username):
         """
         Displays the profile of a selected match and allows viewing the conversation history and sending a message.
@@ -75,23 +74,40 @@ class MatchesView:
         else:
             print("Error: Could not find the selected user's profile.")
 
-
+    
     def send_message_prompt(self, match_username):
         """
-        Prompts the user to send a message to the selected match.
+        Prompts the user to send a message to the selected match or unmatch them.
 
         Args:
             match_username (str): The username of the selected match.
         """
         while True:
-            message = input(f"Enter a message to send to {match_username} (or type 'back' to return): ")
+            message = input(f"Enter a message to send to {match_username} (or type 'back' to return, 'unmatch' to remove match): ")
+            
+            # Option to go back
             if message.lower() == 'back':
                 break
+            
+            # Option to unmatch
+            elif message.lower() == 'unmatch':
+                confirm_unmatch = input(f"Are you sure you want to unmatch with {match_username}? (y/n): ")
+                if confirm_unmatch.lower() == 'y':
+                    self.unmatch_user(match_username)
+                    print(f"You have unmatched with {match_username}.")
+                    break  # Exit the prompt after unmatching
+                else:
+                    print("Unmatch canceled.")
+            
+            # Sending a non-empty message
             elif message.strip():
                 self.send_message(match_username, message)
                 print(f"Message sent to {match_username}: {message}")
+            
+            # Handle empty message input
             else:
                 print("Message cannot be empty.")
+
 
     def send_message(self, recipient, message):
         """
@@ -139,4 +155,14 @@ class MatchesView:
                 print(f"{sender}: {msg['message']} ({msg['time']})")
         else:
             print("No messages with this user yet.")
+
+    def unmatch_user(self, match_username):
+        """
+        Removes the match between the current user and the specified match.
+
+        Args:
+            match_username (str): The username of the match to unmatch.
+        """
+        self.matches_logic.unmatch(self.current_user['username'], match_username)
+        print(f"You have unmatched with {match_username}.")
 
