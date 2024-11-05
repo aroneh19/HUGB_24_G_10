@@ -1,9 +1,5 @@
 [
     {
-        "user1": "steinunn",
-        "user2": "vigdis"
-    },
-    {
         "user1": "sara",
         "user2": "johann"
     },
@@ -26,10 +22,6 @@
     {
         "user1": "helga",
         "user2": "runar"
-    },
-    {
-        "user1": "maria",
-        "user2": "harpa"
     },
     {
         "user1": "maria",
