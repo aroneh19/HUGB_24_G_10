@@ -103,14 +103,3 @@ class SystemInterface:
                 return True  # Indicate a match was found
         
         return False  # No match found
-
-    # def unmatch_user(self, match_username):
-    #     """
-    #     Removes the match between the current user and the specified match.
-
-    #     Args:
-    #         match_username (str): The username of the match to unmatch.
-    #     """
-    #     # Call the unmatch method in the system interface or matches logic
-    #     self.matches_logic.unmatch(self.current_user['username'], match_username)
-
